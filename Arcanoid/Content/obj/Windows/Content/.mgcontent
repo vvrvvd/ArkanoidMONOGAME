@@ -4,9 +4,9 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Fryderyk/source/repos/Arcanoid/Arcanoid/Content/ball.png</File>
-    <File>C:/Users/Fryderyk/source/repos/Arcanoid/Arcanoid/Content/brick.png</File>
-    <File>C:/Users/Fryderyk/source/repos/Arcanoid/Arcanoid/Content/paddle.png</File>
+    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/ball.png</File>
+    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/brick.png</File>
+    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/paddle.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

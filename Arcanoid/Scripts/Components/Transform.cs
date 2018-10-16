@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 public class Transform {
 
@@ -9,9 +8,9 @@ public class Transform {
 
     public Transform()
     {
-        position = Vector2.Zero;
-        scale = Vector2.One;
-        rotation = Vector2.Zero;
+        this.position = Vector2.Zero;
+        this.rotation = Vector2.Zero;
+        this.scale = Vector2.One;
     }
 
     public Transform(Vector2 position) : this()

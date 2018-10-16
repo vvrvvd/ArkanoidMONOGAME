@@ -2,19 +2,30 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Arcanoid {
+namespace Arkanoid {
 
-    public class Paddle : Entity {
+    public class Paddle : DrawableEntity, IPhysicsEntity {
 
         private Rectangle screenBounds;
         private Vector2 direction = Vector2.Zero;
         private float speed = 400f;
 
-        public Paddle(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D texture) : base(spriteBatch, startPosition)
+        public Paddle(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D sprite) : base(sprite, spriteBatch, startPosition)
         {
-            this.Texture = texture;
             Tag = "Paddle";
         }
+
+        public void SetBounds(Rectangle bounds)
+        {
+            this.screenBounds = bounds;
+        }
+
+        public Rectangle GetBounds()
+        {
+            return screenBounds;
+        }
+
+        #region Update
 
         public override void Update(GameTime gameTime)
         {
@@ -37,17 +48,22 @@ namespace Arcanoid {
             }
         }
 
+        private void Move(GameTime gameTime)
+        {
+            Transform.position += direction * speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+        }
+
         private void CheckBounds()
         {
 
-            if (transform.position.X < screenBounds.Left)
+            if (Transform.position.X - SpriteRenderer.GetWidth()/2 < screenBounds.Left)
             {
-                transform.position.X = screenBounds.Left;
+                Transform.position.X = screenBounds.Left + SpriteRenderer.GetWidth()/2;
                 BounceFromLeft();
             }
-            else if(transform.position.X + Texture.Bounds.Width * transform.scale.X > screenBounds.Right)
+            else if(Transform.position.X + SpriteRenderer.GetWidth()/2 > screenBounds.Right)
             {
-                transform.position.X = screenBounds.Right - Texture.Bounds.Width * transform.scale.X;
+                Transform.position.X = screenBounds.Right - SpriteRenderer.GetWidth()/2;
                 BounceFromRight();
             }
 
@@ -77,15 +93,21 @@ namespace Arcanoid {
 
         #endregion
 
-        private void Move(GameTime gameTime)
+        #endregion
+
+        #region Physics
+
+        public Rectangle GetBody()
         {
-            transform.position += direction * speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            return SpriteRenderer.GetRectangle();
         }
 
-        public void SetBounds(Rectangle bounds)
+        public void OnCollision(Entity collider)
         {
-            this.screenBounds = bounds;
+            
         }
+
+        #endregion
 
     }
 
