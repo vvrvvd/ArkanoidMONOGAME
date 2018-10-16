@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Arkanoid {
 
@@ -9,6 +10,7 @@ namespace Arkanoid {
         private Rectangle screenBounds;
         private Vector2 direction = Vector2.Zero;
         private float speed = 400f;
+        private float deltaTime;
 
         public Paddle(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D sprite) : base(sprite, spriteBatch, startPosition)
         {
@@ -29,8 +31,9 @@ namespace Arkanoid {
 
         public override void Update(GameTime gameTime)
         {
+            deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
             CheckInput();
-            Move(gameTime);
+            Move();
             CheckBounds();
         }
 
@@ -48,9 +51,9 @@ namespace Arkanoid {
             }
         }
 
-        private void Move(GameTime gameTime)
+        private void Move()
         {
-            Transform.position += direction * speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            Transform.position += direction * speed * deltaTime;
         }
 
         private void CheckBounds()
@@ -104,7 +107,10 @@ namespace Arkanoid {
 
         public void OnCollision(Entity collider)
         {
-            
+           if(collider.Tag.Equals("Ball"))
+            {
+                Transform.position -= speed * direction * deltaTime;
+            }
         }
 
         #endregion

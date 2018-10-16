@@ -9,6 +9,7 @@ namespace Arkanoid {
         private Rectangle screenBounds;
         private Vector2 direction = Vector2.One;
         private float speed = 250f;
+        private float deltaTime;
 
         public Ball(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D sprite) : base(sprite, spriteBatch, startPosition)
         {
@@ -29,13 +30,14 @@ namespace Arkanoid {
 
         public override void Update(GameTime gameTime)
         {
-            Move(gameTime);
+            deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
+            Move();
             CheckBounds();
         }
 
-        private void Move(GameTime gameTime)
+        private void Move()
         {
-            Transform.position += direction * speed * (float)gameTime.ElapsedGameTime.TotalSeconds;
+            Transform.position += direction * speed * deltaTime;
         }
 
         private void CheckBounds()
@@ -99,14 +101,15 @@ namespace Arkanoid {
 
         public void OnCollision(Entity collider)
         {
-            if (collider.Tag.Equals("Paddle"))
-                BounceFromBottom();
-            else if (collider.Tag.Equals("Brick"))
+
+            if (collider.Tag.Equals("Paddle") || collider.Tag.Equals("Brick"))
             {
+                Transform.position -= speed * direction * deltaTime;
+
                 DrawableEntity drawableCollider = (DrawableEntity)collider;
-                Vector2 dist = new Vector2((Transform.position.X + SpriteRenderer.GetWidth()/2f) - (drawableCollider.Transform.position.X + drawableCollider.SpriteRenderer.GetWidth()/2f),
-                                           (Transform.position.Y + SpriteRenderer.GetHeight()/2f) - (drawableCollider.Transform.position.Y + drawableCollider.SpriteRenderer.GetWidth()/2f));
-                float minDistX = (SpriteRenderer.GetWidth()/2f + drawableCollider.SpriteRenderer.GetWidth()/2f - 4);
+                Vector2 dist = new Vector2((Transform.position.X) - (drawableCollider.Transform.position.X),
+                                           (Transform.position.Y) - (drawableCollider.Transform.position.Y));
+                float minDistX = (SpriteRenderer.GetWidth()/2f + drawableCollider.SpriteRenderer.GetWidth()/2f-1);
 
                 if (Math.Abs(dist.X) >= (minDistX))
                 {

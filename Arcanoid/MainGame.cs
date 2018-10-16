@@ -7,7 +7,6 @@ namespace Arkanoid {
     public class MainGame : Game {
 
         GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
 
         GameController gameController;
         
@@ -15,18 +14,20 @@ namespace Arkanoid {
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            gameController = new GameController(this);
         }
 
         protected override void Initialize()
         {
             base.Initialize();
+
+            gameController = new GameController(this);
+            gameController.Initialize();
+
         }
 
 
         protected override void LoadContent()
         {
-            gameController.Initialize();
         }
 
         protected override void UnloadContent()
@@ -51,8 +52,6 @@ namespace Arkanoid {
 
             base.Draw(gameTime);
         }
-
-
 
     }
 }
