@@ -5,7 +5,7 @@ using System;
 
 namespace Arkanoid {
 
-    public class Paddle : DrawableEntity, IPhysicsEntity {
+    public class Paddle : DrawableEntity, IPhysicsBody {
 
         private Rectangle screenBounds;
         private Vector2 direction = Vector2.Zero;
@@ -105,7 +105,7 @@ namespace Arkanoid {
             return SpriteRenderer.GetRectangle();
         }
 
-        public void OnCollision(IPhysicsEntity collider)
+        public void OnCollision(IPhysicsBody collider)
         {
             //EMPTY
         }

@@ -3,9 +3,9 @@
 
 namespace Arkanoid
 {
-    public interface IPhysicsEntity
+    public interface IPhysicsBody
     {
         Rectangle GetBody();
-        void OnCollision(IPhysicsEntity collider);
+        void OnCollision(IPhysicsBody collider);
     }
 }

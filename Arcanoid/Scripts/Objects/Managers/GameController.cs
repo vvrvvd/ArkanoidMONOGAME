@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Arkanoid
 {
-    public class GameController : IGameComponent
+    public class GameController : IUpdateable, IDrawable
     {
         EntitiesManager entitiesManager;
         PhysicsManager physicsManager;
@@ -23,6 +23,16 @@ namespace Arkanoid
             this.game = game;
         }
 
+        public void DestroyEntity(Entity entity)
+        {
+            entitiesManager.RemoveEntity(entity);
+
+            if (entity is IPhysicsBody)
+                physicsManager.RemovePhysicsEntity((IPhysicsBody)entity);
+        }
+
+        #region Update
+
         public void Update(GameTime gameTime)
         {
             for (int i = 0; i < entities.Count; i++)
@@ -39,20 +49,18 @@ namespace Arkanoid
 
         }
 
-        public void DestroyEntity(Entity entity)
-        {
-            entitiesManager.RemoveEntity(entity);
+        #endregion
 
-            if (entity is IPhysicsEntity)
-                physicsManager.RemovePhysicsEntity((IPhysicsEntity)entity);
-        }
-
+        #region Draw
+        
         public void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
             entitiesManager.Draw(gameTime);
             spriteBatch.End();
         }
+
+        #endregion
 
         #region Initialize
 

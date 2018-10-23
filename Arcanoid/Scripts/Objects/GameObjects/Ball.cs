@@ -4,7 +4,7 @@ using System;
 
 namespace Arkanoid {
 
-    public class Ball : DrawableEntity, IPhysicsEntity {
+    public class Ball : DrawableEntity, IPhysicsBody {
 
         private Rectangle screenBounds;
         private Vector2 direction = Vector2.One;
@@ -75,7 +75,7 @@ namespace Arkanoid {
             return SpriteRenderer.GetRectangle();
         }
 
-        public void OnCollision(IPhysicsEntity collider)
+        public void OnCollision(IPhysicsBody collider)
         {
             if (collider is Paddle)
             {
@@ -109,7 +109,7 @@ namespace Arkanoid {
             direction = new Vector2(-direction.X, direction.Y);
         }
 
-        private void BounceFromCollider(IPhysicsEntity collider)
+        private void BounceFromCollider(IPhysicsBody collider)
         {
             Rectangle colliderBody = collider.GetBody();
             Vector2 dist = new Vector2((Transform.position.X) - (colliderBody.Center.X),
@@ -126,7 +126,7 @@ namespace Arkanoid {
             }
         }
 
-        private void BounceFromColliderUsingOffsetAngle(IPhysicsEntity collider)
+        private void BounceFromColliderUsingOffsetAngle(IPhysicsBody collider)
         {
             Rectangle colliderBody = collider.GetBody();
             Rectangle ballBody = GetBody();

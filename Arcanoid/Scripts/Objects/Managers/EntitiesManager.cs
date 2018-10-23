@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Arkanoid
 {
-    public class EntitiesManager :IGameComponent
+    public class EntitiesManager :IUpdateable, IDrawable
     {
         private List<Entity> entities;
         private List<DrawableEntity> drawableEntities;
@@ -35,10 +35,8 @@ namespace Arkanoid
             return entities;
         }
 
-        public void Initialize()
-        {
-            //EMPTY
-        }
+
+    #region Update
 
         public void Update(GameTime gameTime)
         {
@@ -48,11 +46,17 @@ namespace Arkanoid
             }
         }
 
+    #endregion
+
+    #region Draw
+
         public void Draw(GameTime gameTime)
         {
             for (int i = 0; i < drawableEntities.Count; i++)
                 drawableEntities[i].Draw(gameTime);
         }
+
+    #endregion
 
     }
 }

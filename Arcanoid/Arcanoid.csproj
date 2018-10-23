@@ -45,7 +45,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\AbstractClasses\DrawableEntity.cs" />
-    <Compile Include="Scripts\AbstractClasses\Interfaces\IPhysicsEntity.cs" />
+    <Compile Include="Scripts\AbstractClasses\Interfaces\IDrawable.cs" />
+    <Compile Include="Scripts\AbstractClasses\Interfaces\IUpdateable.cs" />
+    <Compile Include="Scripts\AbstractClasses\Interfaces\IPhysicsBody.cs" />
     <Compile Include="Scripts\Components\SpriteRenderer.cs" />
     <Compile Include="Scripts\Objects\Managers\EntitiesManager.cs" />
     <Compile Include="Scripts\Objects\Managers\GameController.cs" />

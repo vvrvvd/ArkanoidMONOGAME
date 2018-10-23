@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Arkanoid {
 
-    public class Brick : DrawableEntity, IPhysicsEntity
+    public class Brick : DrawableEntity, IPhysicsBody
     {
 
         public Brick(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D sprite) : base(sprite, spriteBatch, startPosition)
@@ -19,7 +19,7 @@ namespace Arkanoid {
             return SpriteRenderer.GetRectangle();
         }
 
-        public void OnCollision(IPhysicsEntity collider)
+        public void OnCollision(IPhysicsBody collider)
         {
             if (collider is Ball)
             {

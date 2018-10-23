@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Arkanoid
 {
 
-    public abstract class DrawableEntity : Entity {
+    public abstract class DrawableEntity : Entity, IDrawable {
 
         public SpriteRenderer SpriteRenderer;
 

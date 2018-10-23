@@ -8,26 +8,19 @@ namespace Arkanoid
     public class PhysicsManager
     {
         private List<Entity> entities;
-        private List<IPhysicsEntity> physicsEntities;
+        private List<IPhysicsBody> physicsEntities;
         private List<Action> collisionsActions;
 
         public PhysicsManager()
         {
-            physicsEntities = new List<IPhysicsEntity>();
+            physicsEntities = new List<IPhysicsBody>();
             collisionsActions = new List<Action>();
         }
 
+        #region Update
+
         public void Update(GameTime gameTime)
         {
-
-            for (int i = 0; i < physicsEntities.Count; i++)
-            {
-                if(((Entity)physicsEntities[i]).IsDestroyed())
-                {
-                    RemovePhysicsEntity(physicsEntities[i]);
-                    i--;
-                }
-            }
 
             CheckCollisions();
 
@@ -42,8 +35,8 @@ namespace Arkanoid
                 {
                     if (!physicsEntities[i].Equals(physicsEntities[j]) && physicsEntities[i].GetBody().Intersects(physicsEntities[j].GetBody()))
                     {
-                        IPhysicsEntity collider2 = physicsEntities[j];
-                        IPhysicsEntity collider1 = physicsEntities[i];
+                        IPhysicsBody collider2 = physicsEntities[j];
+                        IPhysicsBody collider1 = physicsEntities[i];
                         collisionsActions.Add(() => collider1.OnCollision(collider2));
                     }
                 }
@@ -57,12 +50,14 @@ namespace Arkanoid
             collisionsActions.Clear();
         }
 
-        public void AddPhysicsEntity(IPhysicsEntity physicsEntity)
+        #endregion
+
+        public void AddPhysicsEntity(IPhysicsBody physicsEntity)
         {
             physicsEntities.Add(physicsEntity);
         }
 
-        public void RemovePhysicsEntity(IPhysicsEntity physicsEntity)
+        public void RemovePhysicsEntity(IPhysicsBody physicsEntity)
         {
             physicsEntities.Remove(physicsEntity);
         }
