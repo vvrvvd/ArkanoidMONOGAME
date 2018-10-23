@@ -19,9 +19,9 @@ namespace Arkanoid {
             return SpriteRenderer.GetRectangle();
         }
 
-        public void OnCollision(Entity collider)
+        public void OnCollision(IPhysicsEntity collider)
         {
-            if (collider.Tag.Equals("Ball"))
+            if (collider is Ball)
             {
                 Destroy();
             }

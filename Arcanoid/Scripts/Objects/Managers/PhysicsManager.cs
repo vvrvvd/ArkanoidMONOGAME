@@ -42,7 +42,7 @@ namespace Arkanoid
                 {
                     if (!physicsEntities[i].Equals(physicsEntities[j]) && physicsEntities[i].GetBody().Intersects(physicsEntities[j].GetBody()))
                     {
-                        Entity collider2 = (Entity)physicsEntities[j];
+                        IPhysicsEntity collider2 = physicsEntities[j];
                         IPhysicsEntity collider1 = physicsEntities[i];
                         collisionsActions.Add(() => collider1.OnCollision(collider2));
                     }

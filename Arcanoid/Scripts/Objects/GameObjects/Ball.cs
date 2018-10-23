@@ -46,49 +46,25 @@ namespace Arkanoid {
             if (Transform.position.X  - SpriteRenderer.GetWidth()/2 < screenBounds.Left)
             {
                 Transform.position.X = screenBounds.Left + SpriteRenderer.GetWidth()/2;
-                BounceFromLeft();
+                BounceFromVertical();
             }
             else if(Transform.position.X + SpriteRenderer.GetWidth()/2 > screenBounds.Right)
             {
                 Transform.position.X = screenBounds.Right - SpriteRenderer.GetWidth()/2;
-                BounceFromRight();
+                BounceFromVertical();
             }
 
             if (Transform.position.Y + SpriteRenderer.GetHeight()/2 > screenBounds.Bottom)
             {
                 Transform.position.Y = screenBounds.Bottom - SpriteRenderer.GetHeight()/2;
-                BounceFromBottom();
+                BounceFromHorizontal();
             }
             else if (Transform.position.Y  - SpriteRenderer.GetHeight()/2 < screenBounds.Top)
             {
                 Transform.position.Y = screenBounds.Top + SpriteRenderer.GetHeight() / 2;
-                BounceFromTop();
+                BounceFromHorizontal();
             }
         }
-
-        #region Bounce
-
-        private void BounceFromTop()
-        {
-            direction = new Vector2(direction.X, -direction.Y);
-        }
-
-        private void BounceFromBottom()
-        {
-            direction = new Vector2(direction.X, -direction.Y);
-        }
-
-        private void BounceFromLeft()
-        {
-            direction = new Vector2(-direction.X, direction.Y);
-        }
-
-        private void BounceFromRight()
-        {
-            direction = new Vector2(-direction.X, direction.Y);
-        }
-
-        #endregion
 
         #endregion
 
@@ -99,27 +75,68 @@ namespace Arkanoid {
             return SpriteRenderer.GetRectangle();
         }
 
-        public void OnCollision(Entity collider)
+        public void OnCollision(IPhysicsEntity collider)
         {
-
-            if (collider.Tag.Equals("Paddle") || collider.Tag.Equals("Brick"))
+            if (collider is Paddle)
+            {
+                Rectangle colliderBody = collider.GetBody();
+                Rectangle ballBody = GetBody();
+                int distY = (int)Math.Ceiling(Math.Abs((ballBody.Center.Y - speed * direction.Y * deltaTime) - colliderBody.Center.Y));
+                int minDistY = ballBody.Height/2 + colliderBody.Height/2;
+                if (distY >= minDistY)
+                {
+                    Transform.position -= speed * direction * deltaTime;
+                    BounceFromColliderUsingOffsetAngle(collider);
+                }
+            } else if (collider is Brick)
             {
                 Transform.position -= speed * direction * deltaTime;
-
-                DrawableEntity drawableCollider = (DrawableEntity)collider;
-                Vector2 dist = new Vector2((Transform.position.X) - (drawableCollider.Transform.position.X),
-                                           (Transform.position.Y) - (drawableCollider.Transform.position.Y));
-                float minDistX = (SpriteRenderer.GetWidth()/2f + drawableCollider.SpriteRenderer.GetWidth()/2f-1);
-
-                if (Math.Abs(dist.X) >= (minDistX))
-                {
-                    BounceFromLeft();
-                }
-                else
-                {
-                    BounceFromTop();
-                }
+                BounceFromCollider(collider);
             }
+        }
+
+        #endregion
+
+        #region Bounce
+
+        private void BounceFromHorizontal()
+        {
+            direction = new Vector2(direction.X, -direction.Y);
+        }
+
+        private void BounceFromVertical()
+        {
+            direction = new Vector2(-direction.X, direction.Y);
+        }
+
+        private void BounceFromCollider(IPhysicsEntity collider)
+        {
+            Rectangle colliderBody = collider.GetBody();
+            Vector2 dist = new Vector2((Transform.position.X) - (colliderBody.Center.X),
+                                       (Transform.position.Y) - (colliderBody.Center.Y));
+            float minDistX = (SpriteRenderer.GetWidth() / 2f + colliderBody.Width / 2f - 1);
+
+            if (Math.Abs(dist.X) >= (minDistX))
+            {
+                BounceFromVertical();
+            }
+            else
+            {
+                BounceFromHorizontal();
+            }
+        }
+
+        private void BounceFromColliderUsingOffsetAngle(IPhysicsEntity collider)
+        {
+            Rectangle colliderBody = collider.GetBody();
+            Rectangle ballBody = GetBody();
+            double offsetX = ((Transform.position.X) - (colliderBody.Center.X))/colliderBody.Width;
+            double rad = Math.PI * (2 * offsetX);
+
+            direction.X = (float)Math.Sin(rad);
+            direction.Y = -(float)Math.Cos(rad);
+            direction.Normalize();
+            direction *= 2;
         }
 
         #endregion

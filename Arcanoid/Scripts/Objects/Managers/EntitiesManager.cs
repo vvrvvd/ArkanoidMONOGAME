@@ -37,21 +37,14 @@ namespace Arkanoid
 
         public void Initialize()
         {
-
+            //EMPTY
         }
 
         public void Update(GameTime gameTime)
         {
             for (int i = 0; i < entities.Count; i++)
             {
-                if(entities[i].IsDestroyed())
-                {
-                    RemoveEntity(entities[i]);
-                    i--;
-                } else
-                {
-                    entities[i].Update(gameTime);
-                }
+                entities[i].Update(gameTime);
             }
         }
 
@@ -60,9 +53,6 @@ namespace Arkanoid
             for (int i = 0; i < drawableEntities.Count; i++)
                 drawableEntities[i].Draw(gameTime);
         }
-
-
-
 
     }
 }

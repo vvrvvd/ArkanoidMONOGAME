@@ -6,6 +6,6 @@ namespace Arkanoid
     public interface IPhysicsEntity
     {
         Rectangle GetBody();
-        void OnCollision(Entity collider);
+        void OnCollision(IPhysicsEntity collider);
     }
 }
