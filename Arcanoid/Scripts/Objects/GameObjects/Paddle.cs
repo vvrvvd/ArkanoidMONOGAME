@@ -27,6 +27,11 @@ namespace Arkanoid {
             return screenBounds;
         }
 
+        public Vector2 GetDirection()
+        {
+            return direction;
+        }
+
         #region Update
 
         public override void Update(GameTime gameTime)

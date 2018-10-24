@@ -44,7 +44,7 @@
     <Compile Include="MainGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scripts\AbstractClasses\DrawableEntity.cs" />
+    <Compile Include="Scripts\AbstractClasses\Entities\DrawableEntity.cs" />
     <Compile Include="Scripts\AbstractClasses\Interfaces\IDrawable.cs" />
     <Compile Include="Scripts\AbstractClasses\Interfaces\IUpdateable.cs" />
     <Compile Include="Scripts\AbstractClasses\Interfaces\IPhysicsBody.cs" />
@@ -56,7 +56,7 @@
     <Compile Include="Scripts\Objects\GameObjects\Paddle.cs" />
     <Compile Include="Scripts\Objects\GameObjects\Ball.cs" />
     <Compile Include="Scripts\Components\Transform.cs" />
-    <Compile Include="Scripts\AbstractClasses\Entity.cs" />
+    <Compile Include="Scripts\AbstractClasses\Entities\Entity.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

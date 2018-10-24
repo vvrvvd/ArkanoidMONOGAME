@@ -79,14 +79,18 @@ namespace Arkanoid {
         {
             if (collider is Paddle)
             {
-                Rectangle colliderBody = collider.GetBody();
+                Paddle paddle = (Paddle)collider;
+                Rectangle paddleBody = paddle.GetBody();
+                Vector2 paddleDirection = paddle.GetDirection();
                 Rectangle ballBody = GetBody();
-                int distY = (int)Math.Ceiling(Math.Abs((ballBody.Center.Y - speed * direction.Y * deltaTime) - colliderBody.Center.Y));
-                int minDistY = ballBody.Height/2 + colliderBody.Height/2;
-                if (distY >= minDistY)
+
+                int distY = (int)Math.Ceiling(Math.Abs((ballBody.Center.Y - speed * direction.Y * deltaTime) - paddleBody.Center.Y));
+                int minDistY = ballBody.Height / 2 + paddleBody.Height / 2;
+
+                if (distY >= minDistY) //Not ball loose so we can bounce from paddle
                 {
                     Transform.position -= speed * direction * deltaTime;
-                    BounceFromColliderUsingOffsetAngle(collider);
+                    BounceFromMovingVertCollider(collider, paddleDirection.X);
                 }
             } else if (collider is Brick)
             {
@@ -126,17 +130,24 @@ namespace Arkanoid {
             }
         }
 
-        private void BounceFromColliderUsingOffsetAngle(IPhysicsBody collider)
+        private void BounceFromMovingVertCollider(IPhysicsBody collider, float verticalDirection)
         {
-            Rectangle colliderBody = collider.GetBody();
-            Rectangle ballBody = GetBody();
-            double offsetX = ((Transform.position.X) - (colliderBody.Center.X))/colliderBody.Width;
-            double rad = Math.PI * (2 * offsetX);
+            if (verticalDirection == 0) //Not moving
+            {
+                BounceFromCollider(collider);
+            }
+            else //Moving to the one side -1 or 1
+            {
+                Rectangle colliderBody = collider.GetBody();
 
-            direction.X = (float)Math.Sin(rad);
-            direction.Y = -(float)Math.Cos(rad);
-            direction.Normalize();
-            direction *= 2;
+                double offsetX = ((Transform.position.X) - (colliderBody.Center.X)) / colliderBody.Width+ 0.5;
+                double rad = Math.PI * offsetX/3;
+
+                direction.X = (float)Math.Sin(rad)*verticalDirection;
+                direction.Y = (float)Math.Cos(rad)*(-1);
+
+            }
+            
         }
 
         #endregion
