@@ -79,7 +79,11 @@ namespace Arkanoid
         {
             game.Content.Load<Texture2D>("ballGrey");
             game.Content.Load<Texture2D>("paddleBlu");
+            game.Content.Load<Texture2D>("element_red_rectangle");
             game.Content.Load<Texture2D>("element_yellow_rectangle");
+            game.Content.Load<Texture2D>("element_blue_rectangle");
+            game.Content.Load<Texture2D>("element_purple_rectangle");
+            game.Content.Load<Texture2D>("element_green_rectangle");
             game.Content.Load<Texture2D>("element_grey_rectangle");
         }
 
@@ -121,7 +125,7 @@ namespace Arkanoid
 
         private void GenerateMap()
         {
-            List<Brick> map = mapGenerator.GenerateMap(10, 5, 5f, 5f);
+            List<Brick> map = mapGenerator.GenerateMap(9, 5, 5f, 5f);
 
             entitiesManager.AddEntity(map);
             physicsManager.AddPhysicsEntity(map);

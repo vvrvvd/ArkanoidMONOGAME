@@ -4,15 +4,17 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/ball.png</File>
     <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/ballGrey.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/brick.png</File>
+    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_blue_rectangle.png</File>
+    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_green_rectangle.png</File>
     <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_grey_rectangle.png</File>
+    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_purple_rectangle.png</File>
+    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_red_rectangle.png</File>
     <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_yellow_rectangle.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/paddle.png</File>
     <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/paddleBlu.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

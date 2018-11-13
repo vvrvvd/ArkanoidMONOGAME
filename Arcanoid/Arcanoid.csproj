@@ -50,7 +50,6 @@
     <Compile Include="Scripts\Abstracts\Interfaces\IUpdateable.cs" />
     <Compile Include="Scripts\Abstracts\Interfaces\IPhysicsBody.cs" />
     <Compile Include="Scripts\Components\SpriteRenderer.cs" />
-    <Compile Include="Scripts\Objects\GameObjects\ImmortaBrick.cs" />
     <Compile Include="Scripts\Objects\Managers\MainGame\EntitiesManager.cs" />
     <Compile Include="Scripts\Objects\Managers\MainGame\MainGame.cs" />
     <Compile Include="Scripts\Objects\Managers\MainGame\PhysicsManager.cs" />
