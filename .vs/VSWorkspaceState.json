@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Arcanoid",
+    "\\Arcanoid\\Scripts",
+    "\\Arcanoid\\Scripts\\Abstracts",
+    "\\Arcanoid\\Scripts\\Abstracts\\Entities",
+    "\\Arcanoid\\Scripts\\Components",
+    "\\Arcanoid\\Scripts\\Objects",
+    "\\Arcanoid\\Scripts\\Objects\\GameObjects",
+    "\\Arcanoid\\Scripts\\Objects\\Managers",
+    "\\Arcanoid\\Scripts\\Objects\\Managers\\MainGame",
+    "\\Arcanoid\\Scripts\\Utils"
+  ],
+  "SelectedNode": "\\Arcanoid\\Scripts\\Objects\\GameObjects\\ImmortalBrick.cs",
+  "PreviewInSolutionExplorer": false
+}

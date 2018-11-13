@@ -3,7 +3,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Arkanoid
 {
-
     public abstract class Entity : IUpdateable
     {
 
@@ -37,5 +36,4 @@ namespace Arkanoid
             isDestroyed = true;
         }
     }
-
 }

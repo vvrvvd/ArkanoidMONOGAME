@@ -13,7 +13,7 @@ namespace Arkanoid {
         [STAThread]
         static void Main()
         {
-            using (var game = new MainGame())
+            using (var game = new GameController())
                 game.Run();
         }
     }

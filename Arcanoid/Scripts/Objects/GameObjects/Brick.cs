@@ -1,15 +1,16 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 
 namespace Arkanoid {
 
     public class Brick : DrawableEntity, IPhysicsBody
     {
+        private int lifeCount;
 
-        public Brick(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D sprite) : base(sprite, spriteBatch, startPosition)
+        public Brick(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D sprite, int lifeCount = 1) : base(sprite, spriteBatch, startPosition)
         {
             Tag = "Brick";
+            this.lifeCount = lifeCount;
         }
 
         #region Physics
@@ -19,12 +20,19 @@ namespace Arkanoid {
             return SpriteRenderer.GetRectangle();
         }
 
-        public void OnCollision(IPhysicsBody collider)
+        public virtual void OnCollision(IPhysicsBody collider)
         {
             if (collider is Ball)
             {
-                Destroy();
+                TakeLifeCount();
             }
+        }
+
+        private void TakeLifeCount()
+        {
+            lifeCount--;
+            if (lifeCount <= 0)
+                Destroy();
         }
 
         #endregion

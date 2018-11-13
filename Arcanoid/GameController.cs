@@ -4,30 +4,42 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Arkanoid {
 
-    public class MainGame : Game {
+    public class GameController : Game {
 
         GraphicsDeviceManager graphics;
 
-        GameController gameController;
-        
-        public MainGame()
+        enum GameState
+        {
+            Menu,
+            Game,
+            GameOver
+        }
+        private GameState gameState;
+
+        MainGame mainGameController;
+        MainMenu mainMenuController;
+
+        public GameController()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            gameState = GameState.Game;
         }
 
         protected override void Initialize()
         {
             base.Initialize();
 
-            gameController = new GameController(this);
-            gameController.Initialize();
-
+            mainGameController = new MainGame(this);
+            mainGameController.Initialize();
+            mainMenuController = new MainMenu(this);
+            mainMenuController.Initialize();
         }
 
 
         protected override void LoadContent()
         {
+            // TODO: Load any non ContentManager content here
         }
 
         protected override void UnloadContent()
@@ -38,9 +50,18 @@ namespace Arkanoid {
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+                gameState = GameState.Menu;
 
-            gameController.Update(gameTime);
+            switch (gameState)
+            {
+                case GameState.Game:
+                    mainGameController.Update(gameTime);
+                    break;
+                case GameState.Menu:
+                    mainMenuController.Update(gameTime);
+                    break;
+            }
+
             base.Update(gameTime);
         }
 
@@ -48,7 +69,7 @@ namespace Arkanoid {
         {
             GraphicsDevice.Clear(Color.Black);
 
-            gameController.Draw(gameTime);
+            mainGameController.Draw(gameTime);
 
             base.Draw(gameTime);
         }

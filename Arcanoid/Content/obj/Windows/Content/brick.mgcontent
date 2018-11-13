@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/brick.png</SourceFile>
-  <SourceTime>2018-10-06T16:01:28.8283175+02:00</SourceTime>
-  <DestFile>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/bin/Windows/Content/brick.xnb</DestFile>
-  <DestTime>2018-10-23T23:14:23.706478+02:00</DestTime>
+  <SourceFile>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/brick.png</SourceFile>
+  <SourceTime>2018-10-16T09:23:40.880566+02:00</SourceTime>
+  <DestFile>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/bin/Windows/Content/brick.xnb</DestFile>
+  <DestTime>2018-11-06T10:21:17.2379297+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-09-23T23:55:52+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

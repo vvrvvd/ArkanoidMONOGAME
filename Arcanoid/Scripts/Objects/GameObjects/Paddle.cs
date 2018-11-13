@@ -1,15 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
 
 namespace Arkanoid {
 
     public class Paddle : DrawableEntity, IPhysicsBody {
 
+        private readonly float speed = 400f;
+
         private Rectangle screenBounds;
         private Vector2 direction = Vector2.Zero;
-        private float speed = 400f;
         private float deltaTime;
 
         public Paddle(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D sprite) : base(sprite, spriteBatch, startPosition)

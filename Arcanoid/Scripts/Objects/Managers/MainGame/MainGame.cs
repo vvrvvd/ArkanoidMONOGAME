@@ -4,23 +4,19 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Arkanoid
 {
-    public class GameController : IUpdateable, IDrawable
+    public class MainGame : Scene
     {
         EntitiesManager entitiesManager;
         PhysicsManager physicsManager;
+        MapGenerator mapGenerator;
 
         private List<Entity> entities;
         private Rectangle screenBounds;
-        private Game game;
 
-        SpriteBatch spriteBatch;
-
-        public GameController(Game game)
+        public MainGame(Game game) : base(game)
         {
-            this.entitiesManager = new EntitiesManager();
-            this.physicsManager = new PhysicsManager();
-            this.spriteBatch = new SpriteBatch(game.GraphicsDevice);
-            this.game = game;
+            entitiesManager = new EntitiesManager();
+            physicsManager = new PhysicsManager();
         }
 
         public void DestroyEntity(Entity entity)
@@ -33,7 +29,7 @@ namespace Arkanoid
 
         #region Update
 
-        public void Update(GameTime gameTime)
+        public override void Update(GameTime gameTime)
         {
             for (int i = 0; i < entities.Count; i++)
             {
@@ -53,7 +49,7 @@ namespace Arkanoid
 
         #region Draw
         
-        public void Draw(GameTime gameTime)
+        public override void Draw(GameTime gameTime)
         {
             spriteBatch.Begin();
             entitiesManager.Draw(gameTime);
@@ -64,24 +60,27 @@ namespace Arkanoid
 
         #region Initialize
 
-        public void Initialize()
+        public override void Initialize()
         {
             LoadTextures();
 
             InitializeScreenBounds();
 
             InitializeBall();
-            InitializeMap();
             InitializePaddle();
+
+            InitializeMapGenerator();
+            GenerateMap();
 
             entities = entitiesManager.GetEntities();
         }
 
         private void LoadTextures()
         {
-            game.Content.Load<Texture2D>("ball");
-            game.Content.Load<Texture2D>("paddle");
-            game.Content.Load<Texture2D>("brick");
+            game.Content.Load<Texture2D>("ballGrey");
+            game.Content.Load<Texture2D>("paddleBlu");
+            game.Content.Load<Texture2D>("element_yellow_rectangle");
+            game.Content.Load<Texture2D>("element_grey_rectangle");
         }
 
         private void InitializeScreenBounds()
@@ -91,11 +90,11 @@ namespace Arkanoid
 
         private void InitializeBall()
         {
-            Texture2D ballTexture = game.Content.Load<Texture2D>("ball");
+            Texture2D ballTexture = game.Content.Load<Texture2D>("ballGrey");
             Vector2 position = new Vector2(screenBounds.Right / 2f, screenBounds.Bottom/2f);
             Ball ball = new Ball(spriteBatch, position, ballTexture);
-            ball.Transform.scale.X = 0.5f;
-            ball.Transform.scale.Y = 0.5f;
+            ball.Transform.scale.X = 1f;
+            ball.Transform.scale.Y = 1f;
             ball.SetBounds(screenBounds);
             entitiesManager.AddEntity(ball);
             physicsManager.AddPhysicsEntity(ball);
@@ -103,9 +102,9 @@ namespace Arkanoid
 
         private void InitializePaddle()
         {
-            float scaleX = 0.75f;
-            float scaleY = 0.5f;
-            Texture2D paddleTexture = game.Content.Load<Texture2D>("paddle");
+            float scaleX = 1f;
+            float scaleY = 1f;
+            Texture2D paddleTexture = game.Content.Load<Texture2D>("paddleBlu");
             Vector2 position = new Vector2(screenBounds.Right / 2f, screenBounds.Bottom-paddleTexture.Height/2 * scaleY);
             Paddle paddle = new Paddle(spriteBatch, position, paddleTexture);
             paddle.Transform.scale.X = scaleX;
@@ -115,25 +114,17 @@ namespace Arkanoid
             physicsManager.AddPhysicsEntity(paddle);
         }
 
-        private void InitializeMap()
+        private void InitializeMapGenerator()
         {
-            float scaleX = 0.75f;
-            float scaleY = 0.5f;
+            mapGenerator = new MapGenerator(game, spriteBatch, screenBounds);
+        }
 
-            Texture2D brickTexture = game.Content.Load<Texture2D>("brick");
-            float offsetX = (screenBounds.Right - 5 * brickTexture.Width)/2;
-            for (int i = 0; i < 6; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    Brick brick = new Brick(spriteBatch, new Vector2((i * brickTexture.Width) + offsetX, ((j+0.5f) * brickTexture.Height*2) * scaleY), brickTexture);
-                    brick.Transform.scale.X = scaleX;
-                    brick.Transform.scale.Y = scaleY;
-                    entitiesManager.AddEntity(brick);
-                    physicsManager.AddPhysicsEntity(brick);
-                }
-            }
+        private void GenerateMap()
+        {
+            List<Brick> map = mapGenerator.GenerateMap(10, 5, 5f, 5f);
 
+            entitiesManager.AddEntity(map);
+            physicsManager.AddPhysicsEntity(map);
         }
 
         #endregion

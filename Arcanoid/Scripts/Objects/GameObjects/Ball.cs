@@ -6,14 +6,17 @@ namespace Arkanoid {
 
     public class Ball : DrawableEntity, IPhysicsBody {
 
+        private readonly float speed = 350f;
+
         private Rectangle screenBounds;
-        private Vector2 direction = Vector2.One;
-        private float speed = 250f;
+        private Vector2 direction;
         private float deltaTime;
 
         public Ball(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D sprite) : base(sprite, spriteBatch, startPosition)
         {
             Tag = "Ball";
+            direction = Vector2.One;
+            direction.Normalize();
         }
 
         public void SetBounds(Rectangle bounds)
@@ -77,9 +80,8 @@ namespace Arkanoid {
 
         public void OnCollision(IPhysicsBody collider)
         {
-            if (collider is Paddle)
+            if (collider is Paddle paddle)
             {
-                Paddle paddle = (Paddle)collider;
                 Rectangle paddleBody = paddle.GetBody();
                 Vector2 paddleDirection = paddle.GetDirection();
                 Rectangle ballBody = GetBody();

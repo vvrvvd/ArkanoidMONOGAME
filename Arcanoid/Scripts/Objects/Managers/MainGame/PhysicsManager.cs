@@ -5,30 +5,24 @@ using System.Collections.Generic;
 
 namespace Arkanoid
 {
-    public class PhysicsManager
+    public class PhysicsManager : IUpdateable
     {
-        private List<Entity> entities;
         private List<IPhysicsBody> physicsEntities;
-        private List<Action> collisionsActions;
 
         public PhysicsManager()
         {
             physicsEntities = new List<IPhysicsBody>();
-            collisionsActions = new List<Action>();
         }
 
         #region Update
 
         public void Update(GameTime gameTime)
         {
-
             CheckCollisions();
-
         }
 
         public void CheckCollisions()
         {
-
             for (int i = 0; i < physicsEntities.Count; i++)
             {
                 for (int j = 0; j < physicsEntities.Count; j++)
@@ -37,17 +31,11 @@ namespace Arkanoid
                     {
                         IPhysicsBody collider2 = physicsEntities[j];
                         IPhysicsBody collider1 = physicsEntities[i];
-                        collisionsActions.Add(() => collider1.OnCollision(collider2));
+                        collider1.OnCollision(collider2);
+                        collider2.OnCollision(collider1);
                     }
                 }
             }
-
-            for (int i = 0; i < collisionsActions.Count; i++)
-            {
-                collisionsActions[i].Invoke();
-            }
-
-            collisionsActions.Clear();
         }
 
         #endregion
@@ -57,11 +45,16 @@ namespace Arkanoid
             physicsEntities.Add(physicsEntity);
         }
 
+        public void AddPhysicsEntity<T>(List<T> physicsEntitiesList) where T : IPhysicsBody
+        {
+            for (int i = 0; i < physicsEntitiesList.Count; i++)
+                AddPhysicsEntity(physicsEntitiesList[i]);
+        }
+
         public void RemovePhysicsEntity(IPhysicsBody physicsEntity)
         {
             physicsEntities.Remove(physicsEntity);
         }
-
 
     }
 }
