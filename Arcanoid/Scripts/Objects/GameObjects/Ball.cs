@@ -11,12 +11,15 @@ namespace Arkanoid {
         private Rectangle screenBounds;
         private Vector2 direction;
         private float deltaTime;
+        private Paddle paddle;
+        private bool isOnPaddle;
 
-        public Ball(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D sprite) : base(sprite, spriteBatch, startPosition)
+        public Ball(SpriteBatch spriteBatch, Vector2 startPosition, Texture2D sprite, Paddle paddle) : base(sprite, spriteBatch, startPosition)
         {
             Tag = "Ball";
             direction = Vector2.One;
             direction.Normalize();
+            this.paddle = paddle;
         }
 
         public void SetBounds(Rectangle bounds)
@@ -29,42 +32,69 @@ namespace Arkanoid {
             return screenBounds;
         }
 
+        public bool IsOnPaddle()
+        {
+            return isOnPaddle;
+        }
+
+        public void SetOnPaddle(bool state)
+        {
+            isOnPaddle = state;
+        }
+
+        public void SetDirection(Vector2 direction)
+        {
+            this.direction = direction;
+        }
+
         #region Update
 
         public override void Update(GameTime gameTime)
         {
             deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds;
-            Move();
-            CheckBounds();
+            if(isOnPaddle)
+            {
+                OnPaddle();
+            } else
+            {
+                Move();
+                CheckBounds();
+            }
+        }
+
+        private void OnPaddle()
+        {
+            float offsetY = paddle.Transform.Position.Y - SpriteRenderer.Sprite.Height * Transform.Scale.Y;
+            Transform.Position = new Vector2(paddle.Transform.Position.X, offsetY);
         }
 
         private void Move()
         {
-            Transform.position += direction * speed * deltaTime;
+            Transform.Position += direction * speed * deltaTime;
         }
 
         private void CheckBounds()
         {
 
-            if (Transform.position.X  - SpriteRenderer.GetWidth()/2 < screenBounds.Left)
+            if (Transform.Position.X  - SpriteRenderer.GetWidth()/2 < screenBounds.Left)
             {
-                Transform.position.X = screenBounds.Left + SpriteRenderer.GetWidth()/2;
+                Transform.Position.X = screenBounds.Left + SpriteRenderer.GetWidth()/2;
                 BounceFromVertical();
             }
-            else if(Transform.position.X + SpriteRenderer.GetWidth()/2 > screenBounds.Right)
+            else if(Transform.Position.X + SpriteRenderer.GetWidth()/2 > screenBounds.Right)
             {
-                Transform.position.X = screenBounds.Right - SpriteRenderer.GetWidth()/2;
+                Transform.Position.X = screenBounds.Right - SpriteRenderer.GetWidth()/2;
                 BounceFromVertical();
             }
 
-            if (Transform.position.Y + SpriteRenderer.GetHeight()/2 > screenBounds.Bottom)
+            if (Transform.Position.Y + SpriteRenderer.GetHeight()/2 > screenBounds.Bottom)
             {
-                Transform.position.Y = screenBounds.Bottom - SpriteRenderer.GetHeight()/2;
+                Transform.Position.Y = screenBounds.Bottom - SpriteRenderer.GetHeight()/2;
                 BounceFromHorizontal();
             }
-            else if (Transform.position.Y  - SpriteRenderer.GetHeight()/2 < screenBounds.Top)
+            else if (Transform.Position.Y  - SpriteRenderer.GetHeight()/2 < screenBounds.Top)
             {
-                Transform.position.Y = screenBounds.Top + SpriteRenderer.GetHeight() / 2;
+                Transform.Position.Y = screenBounds.Top + SpriteRenderer.GetHeight() / 2;
                 BounceFromHorizontal();
             }
         }
@@ -80,8 +110,9 @@ namespace Arkanoid {
 
         public void OnCollision(IPhysicsBody collider)
         {
-            if (collider is Paddle paddle)
+            if (collider is Paddle)
             {
+                Paddle paddle = collider as Paddle;
                 Rectangle paddleBody = paddle.GetBody();
                 Vector2 paddleDirection = paddle.GetDirection();
                 Rectangle ballBody = GetBody();
@@ -91,12 +122,12 @@ namespace Arkanoid {
 
                 if (distY >= minDistY) //Not ball loose so we can bounce from paddle
                 {
-                    Transform.position -= speed * direction * deltaTime;
+                    Transform.Position -= speed * direction * deltaTime;
                     BounceFromMovingVertCollider(collider, paddleDirection.X);
                 }
             } else if (collider is Brick)
             {
-                Transform.position -= speed * direction * deltaTime;
+                Transform.Position -= speed * direction * deltaTime;
                 BounceFromCollider(collider);
             }
         }
@@ -118,8 +149,8 @@ namespace Arkanoid {
         private void BounceFromCollider(IPhysicsBody collider)
         {
             Rectangle colliderBody = collider.GetBody();
-            Vector2 dist = new Vector2((Transform.position.X) - (colliderBody.Center.X),
-                                       (Transform.position.Y) - (colliderBody.Center.Y));
+            Vector2 dist = new Vector2((Transform.Position.X) - (colliderBody.Center.X),
+                                       (Transform.Position.Y) - (colliderBody.Center.Y));
             float minDistX = (SpriteRenderer.GetWidth() / 2f + colliderBody.Width / 2f - 1);
 
             if (Math.Abs(dist.X) >= (minDistX))
@@ -142,7 +173,7 @@ namespace Arkanoid {
             {
                 Rectangle colliderBody = collider.GetBody();
 
-                double offsetX = ((Transform.position.X) - (colliderBody.Center.X)) / colliderBody.Width+ 0.5;
+                double offsetX = ((Transform.Position.X) - (colliderBody.Center.X)) / colliderBody.Width+ 0.5;
                 double rad = Math.PI * offsetX/3;
 
                 direction.X = (float)Math.Sin(rad)*verticalDirection;

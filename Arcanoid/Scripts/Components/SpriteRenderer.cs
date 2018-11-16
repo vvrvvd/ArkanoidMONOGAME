@@ -5,41 +5,41 @@ namespace Arkanoid
 { 
     public class SpriteRenderer
     {
-        public Texture2D sprite;
-        public SpriteBatch spriteBatch;
-        public Color color;
+        public Texture2D Sprite;
+        public SpriteBatch SpriteBatch;
+        public Color Color;
 
         private Entity entity;
 
         public SpriteRenderer(Texture2D sprite, SpriteBatch spriteBatch, Entity entity)
         {
-            this.sprite = sprite;
-            this.spriteBatch = spriteBatch;
+            this.Sprite = sprite;
+            this.SpriteBatch = spriteBatch;
             this.entity = entity;
-            color = Color.White;
+            Color = Color.White;
         }
 
         public void DrawSprite()
         {
-            if(spriteBatch!=null && sprite!=null)
-                spriteBatch.Draw(sprite, GetRectangle(), color);
+            if(SpriteBatch!=null && Sprite!=null)
+                SpriteBatch.Draw(Sprite, GetRectangle(), Color);
         }
 
         public Rectangle GetRectangle()
         {
-            return new Rectangle((int)entity.Transform.position.X - GetWidth() / 2 , //Position X
-                                 (int)entity.Transform.position.Y - GetHeight() / 2 , //Position Y
+            return new Rectangle((int)entity.Transform.Position.X - GetWidth() / 2 , //Position X
+                                 (int)entity.Transform.Position.Y - GetHeight() / 2 , //Position Y
                                  GetWidth(), GetHeight());
         }
 
         public int GetWidth()
         {
-            return (int)(sprite.Bounds.Width * entity.Transform.scale.X);
+            return (int)(Sprite.Bounds.Width * entity.Transform.Scale.X);
         }
 
         public int GetHeight()
         {
-            return (int)(sprite.Bounds.Height * entity.Transform.scale.Y);
+            return (int)(Sprite.Bounds.Height * entity.Transform.Scale.Y);
         }
 
     }

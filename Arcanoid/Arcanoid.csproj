@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,7 +13,8 @@
     <AssemblyName>Arcanoid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -50,9 +51,10 @@
     <Compile Include="Scripts\Abstracts\Interfaces\IUpdateable.cs" />
     <Compile Include="Scripts\Abstracts\Interfaces\IPhysicsBody.cs" />
     <Compile Include="Scripts\Components\SpriteRenderer.cs" />
-    <Compile Include="Scripts\Objects\Managers\MainGame\EntitiesManager.cs" />
+    <Compile Include="Scripts\Objects\UI\HeartHP.cs" />
+    <Compile Include="Scripts\Utils\EntitiesManager.cs" />
     <Compile Include="Scripts\Objects\Managers\MainGame\MainGame.cs" />
-    <Compile Include="Scripts\Objects\Managers\MainGame\PhysicsManager.cs" />
+    <Compile Include="Scripts\Utils\PhysicsManager.cs" />
     <Compile Include="Scripts\Objects\GameObjects\Brick.cs" />
     <Compile Include="Scripts\Objects\GameObjects\Paddle.cs" />
     <Compile Include="Scripts\Objects\GameObjects\Ball.cs" />
@@ -76,6 +78,7 @@
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
+    <None Include="app.config" />
     <None Include="app.manifest" />
     <None Include="packages.config" />
   </ItemGroup>

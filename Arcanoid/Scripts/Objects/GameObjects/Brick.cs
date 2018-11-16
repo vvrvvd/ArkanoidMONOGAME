@@ -50,7 +50,7 @@ namespace Arkanoid {
 
         private void UpdateSpriteState()
         {
-            SpriteRenderer.sprite = sprites[lifeCount - 1];
+            SpriteRenderer.Sprite = sprites[lifeCount - 1];
         }
 
         #endregion

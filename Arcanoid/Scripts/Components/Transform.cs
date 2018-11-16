@@ -2,30 +2,30 @@
 
 public class Transform {
 
-    public Vector2 position;
-    public Vector2 rotation;
-    public Vector2 scale;
+    public Vector2 Position;
+    public Vector2 Rotation;
+    public Vector2 Scale;
 
     public Transform()
     {
-        this.position = Vector2.Zero;
-        this.rotation = Vector2.Zero;
-        this.scale = Vector2.One;
+        this.Position = Vector2.Zero;
+        this.Rotation = Vector2.Zero;
+        this.Scale = Vector2.One;
     }
 
     public Transform(Vector2 position) : this()
     {
-        this.position = position;
+        this.Position = position;
     }
 
     public Transform(Vector2 position, Vector2 rotation) : this(position)
     {
-        this.rotation = rotation;
+        this.Rotation = rotation;
     }
 
     public Transform(Vector2 position, Vector2 rotation, Vector2 scale) : this(position, rotation)
     {
-        this.scale = scale;
+        this.Scale = scale;
     }
 
 }

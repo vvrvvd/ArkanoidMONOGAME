@@ -22,6 +22,8 @@ namespace Arkanoid {
         public GameController()
         {
             graphics = new GraphicsDeviceManager(this);
+            graphics.PreferredBackBufferWidth = 640;
+            graphics.PreferredBackBufferHeight = 380;
             Content.RootDirectory = "Content";
             gameState = GameState.Game;
         }

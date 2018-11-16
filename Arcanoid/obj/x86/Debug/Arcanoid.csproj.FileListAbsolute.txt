@@ -27,9 +27,6 @@ C:\Users\Fryderyk\source\repos\Arcanoid\Arcanoid\bin\Windows\x86\Debug\Content\b
 E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Debug\Arcanoid.exe
 E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Debug\Arcanoid.pdb
 E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Debug\Arcanoid.csprojResolveAssemblyReference.cache
-E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\ball.xnb
-E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\brick.xnb
-E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\paddle.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Arcanoid.exe
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Arcanoid.pdb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\MonoGame.Framework.dll
@@ -80,3 +77,15 @@ C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\C
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\element_green_rectangle.xnb
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\element_purple_rectangle.xnb
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\element_red_rectangle.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\ballGrey.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\element_blue_rectangle.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\element_green_rectangle.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\element_grey_rectangle.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\element_purple_rectangle.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\element_red_rectangle.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\element_yellow_rectangle.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\paddleBlu.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\MonoGame.UI.Forms.dll
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Arcanoid.exe.config
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\heart.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\background.xnb

@@ -42,7 +42,53 @@ namespace Arkanoid
             yellowBrickTextures = new Texture2D[] { yellowTexture};
         }
 
-        public List<Brick> GenerateMap(int columns, int rows, float distX, float distY)
+        public List<Brick> GenerateSimpleMap(int columns, int rows, float distX, float distY)
+        {
+            float scaleX = 1f;
+            float scaleY = 1f;
+
+            Texture2D brickTexture = game.Content.Load<Texture2D>("element_yellow_rectangle");
+
+            float width = brickTexture.Width * scaleX + distX;
+            float height = brickTexture.Height * scaleY + distY;
+
+            float offsetX = screenBounds.Right / 2 - (columns / 2 * width) + (1 - columns % 2) * 0.5f * width;
+            float offsetY = brickTexture.Height;
+
+            List<Brick> bricks = new List<Brick>();
+            Random rand = new Random();
+
+            for (int i = 0; i < columns; i++)
+            {
+                for (int j = 0; j < rows; j++)
+                {
+                    Brick brick;
+                    Vector2 position = new Vector2((i * width) + offsetX, ((j * height) + offsetY));
+
+                    switch (rand.Next(3))
+                    {
+                        case 0:
+                            brick = CreatePurpleBrick(position);
+                            break;
+                        case 1:
+                            brick = CreateRedBrick(position);
+                            break;
+                        default:
+                            brick = CreateYellowBrick(position);
+                            break;
+                    }
+
+                    brick.Transform.Scale.X = scaleX;
+                    brick.Transform.Scale.Y = scaleY;
+                    bricks.Add(brick);
+                }
+
+            }
+
+            return bricks;
+        }
+
+        public List<Brick> GenerateMapWithBlocks(int columns, int rows, float distX, float distY)
         {
             float scaleX = 1f;
             float scaleY = 1f;
@@ -86,8 +132,8 @@ namespace Arkanoid
                         }
                     }
 
-                    brick.Transform.scale.X = scaleX;
-                    brick.Transform.scale.Y = scaleY;
+                    brick.Transform.Scale.X = scaleX;
+                    brick.Transform.Scale.Y = scaleY;
                     bricks.Add(brick);
                 }
 
