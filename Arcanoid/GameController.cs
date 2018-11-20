@@ -11,9 +11,9 @@ namespace Arkanoid {
         enum GameState
         {
             Menu,
-            Game,
-            GameOver
+            Game
         }
+
         private GameState gameState;
 
         MainGame mainGameController;

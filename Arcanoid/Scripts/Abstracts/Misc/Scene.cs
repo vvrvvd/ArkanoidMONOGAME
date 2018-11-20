@@ -8,7 +8,7 @@ namespace Arkanoid
     {
         protected Game game;
         protected SpriteBatch spriteBatch;
-        protected EntitiesManager uiManager;
+        protected ManagerUI managerUI;
         protected EntitiesManager entitiesManager;
         protected PhysicsManager physicsManager;
         protected List<Entity> entities;
@@ -17,7 +17,7 @@ namespace Arkanoid
         {
             this.game = game;
             this.spriteBatch = new SpriteBatch(game.GraphicsDevice);
-            uiManager = new EntitiesManager();
+            managerUI = new ManagerUI();
             entitiesManager = new EntitiesManager();
             physicsManager = new PhysicsManager();
         }
@@ -58,7 +58,7 @@ namespace Arkanoid
             spriteBatch.End();
 
             spriteBatch.Begin();
-            uiManager.Draw(gameTime);
+            managerUI.Draw(gameTime);
             spriteBatch.End();
         }
 

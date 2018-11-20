@@ -89,3 +89,9 @@ E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\MonoGame.UI.Forms.dll
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Arcanoid.exe.config
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\heart.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\background.xnb
+C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\background.xnb
+C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\heart.xnb
+C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Arcanoid.exe.config
+C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\transparentForeground.xnb
+C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\gameOverFont.xnb
+C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\restartFont.xnb

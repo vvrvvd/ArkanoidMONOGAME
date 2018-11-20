@@ -109,6 +109,13 @@
 /processorParam:TextureFormat=Color
 /build:element_yellow_rectangle.png
 
+#begin gameOverFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:gameOverFont.spritefont
+
 #begin heart.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -132,4 +139,23 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:paddleBlu.png
+
+#begin restartFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:restartFont.spritefont
+
+#begin transparentForeground.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:transparentForeground.png
 

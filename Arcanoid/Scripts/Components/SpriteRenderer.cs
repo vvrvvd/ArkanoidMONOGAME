@@ -9,13 +9,13 @@ namespace Arkanoid
         public SpriteBatch SpriteBatch;
         public Color Color;
 
-        private Entity entity;
+        private Transform transform;
 
-        public SpriteRenderer(Texture2D sprite, SpriteBatch spriteBatch, Entity entity)
+        public SpriteRenderer(Texture2D sprite, SpriteBatch spriteBatch, Transform transform)
         {
             this.Sprite = sprite;
             this.SpriteBatch = spriteBatch;
-            this.entity = entity;
+            this.transform = transform;
             Color = Color.White;
         }
 
@@ -27,19 +27,19 @@ namespace Arkanoid
 
         public Rectangle GetRectangle()
         {
-            return new Rectangle((int)entity.Transform.Position.X - GetWidth() / 2 , //Position X
-                                 (int)entity.Transform.Position.Y - GetHeight() / 2 , //Position Y
+            return new Rectangle((int)transform.Position.X - GetWidth() / 2 , //Position X
+                                 (int)transform.Position.Y - GetHeight() / 2 , //Position Y
                                  GetWidth(), GetHeight());
         }
 
         public int GetWidth()
         {
-            return (int)(Sprite.Bounds.Width * entity.Transform.Scale.X);
+            return (int)(Sprite.Bounds.Width * transform.Scale.X);
         }
 
         public int GetHeight()
         {
-            return (int)(Sprite.Bounds.Height * entity.Transform.Scale.Y);
+            return (int)(Sprite.Bounds.Height * transform.Scale.Y);
         }
 
     }

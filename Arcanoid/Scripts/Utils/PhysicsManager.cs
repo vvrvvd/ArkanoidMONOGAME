@@ -56,5 +56,10 @@ namespace Arkanoid
             physicsEntities.Remove(physicsEntity);
         }
 
+        public void Clear()
+        {
+            physicsEntities.Clear();
+        }
+
     }
 }

@@ -41,6 +41,12 @@ namespace Arkanoid
             return entities;
         }
 
+        public void Clear()
+        {
+            entities.Clear();
+            drawableEntities.Clear();
+        }
+
 
     #region Update
 

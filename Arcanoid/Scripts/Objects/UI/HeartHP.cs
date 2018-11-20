@@ -23,14 +23,19 @@ namespace Arkanoid
             return lifeCount;
         }
 
+        public void AddHeart()
+        {
+            lifeCount++;
+        }
+
         public void RemoveHeart()
         {
             lifeCount--;
         }
 
-        public void AddHeart()
+        public void SetHeart(int count)
         {
-            lifeCount++;
+            lifeCount = count;
         }
 
         public override void Draw(GameTime gameTime)
