@@ -95,3 +95,6 @@ C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\A
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\transparentForeground.xnb
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\gameOverFont.xnb
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\restartFont.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\gameOverFont.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\restartFont.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\transparentForeground.xnb

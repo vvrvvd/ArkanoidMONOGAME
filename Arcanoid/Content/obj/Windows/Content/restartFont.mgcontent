@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/restartFont.spritefont</SourceFile>
-  <SourceTime>2018-09-23T23:55:46+02:00</SourceTime>
-  <DestFile>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/bin/Windows/Content/restartFont.xnb</DestFile>
-  <DestTime>2018-11-20T11:10:09.7712544+01:00</DestTime>
+  <SourceFile>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/restartFont.spritefont</SourceFile>
+  <SourceTime>2018-11-21T07:50:44.3939434+01:00</SourceTime>
+  <DestFile>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/bin/Windows/Content/restartFont.xnb</DestFile>
+  <DestTime>2018-11-21T08:44:28.2955189+01:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2018-09-23T23:55:52+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

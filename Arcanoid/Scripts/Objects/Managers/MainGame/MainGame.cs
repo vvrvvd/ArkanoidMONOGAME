@@ -59,13 +59,18 @@ namespace Arkanoid
 
                 if (hp.GetLifeCount() == 0)
                 {
-                    DestroyEntity(ball);
-                    managerUI.AddEntity(gameOverForeground);
-                    managerUI.AddEntity(gameOverText);
-                    managerUI.AddEntity(restartText);
-                    gameOver = true;
+                    GameOver();
                 }
             }
+        }
+
+        private void GameOver()
+        {
+            DestroyEntity(ball);
+            managerUI.AddEntity(gameOverForeground);
+            managerUI.AddEntity(gameOverText);
+            managerUI.AddEntity(restartText);
+            gameOver = true;
         }
 
         private void CheckRestartInput()

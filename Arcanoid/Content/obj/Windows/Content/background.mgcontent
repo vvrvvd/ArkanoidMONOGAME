@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/background.png</SourceFile>
-  <SourceTime>2018-11-19T14:22:55.7073324+01:00</SourceTime>
-  <DestFile>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/bin/Windows/Content/background.xnb</DestFile>
-  <DestTime>2018-11-19T14:23:29.2813344+01:00</DestTime>
+  <SourceFile>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/background.png</SourceFile>
+  <SourceTime>2018-11-16T19:43:22.9383733+01:00</SourceTime>
+  <DestFile>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/bin/Windows/Content/background.xnb</DestFile>
+  <DestTime>2018-11-21T08:44:27.9564107+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-09-23T23:55:52+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
