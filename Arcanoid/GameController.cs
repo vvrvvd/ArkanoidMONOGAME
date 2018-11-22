@@ -6,9 +6,11 @@ namespace Arkanoid {
 
     public class GameController : Game {
 
-        GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager Graphics;
+        public Rectangle ScreenBounds;
+        public Vector2 ScreenCenter;
 
-        enum GameState
+        public enum GameState
         {
             Menu,
             Game
@@ -16,21 +18,22 @@ namespace Arkanoid {
 
         private GameState gameState;
 
-        MainGame mainGameController;
-        MainMenu mainMenuController;
+        private MainGame mainGameController;
+        private MainMenu mainMenuController;
 
         public GameController()
         {
-            graphics = new GraphicsDeviceManager(this);
-            graphics.PreferredBackBufferWidth = 640;
-            graphics.PreferredBackBufferHeight = 380;
+            Graphics = new GraphicsDeviceManager(this);
+            Graphics.PreferredBackBufferWidth = 640;
+            Graphics.PreferredBackBufferHeight = 380;
             Content.RootDirectory = "Content";
-            gameState = GameState.Game;
+            gameState = GameState.Menu;
         }
 
         protected override void Initialize()
         {
             base.Initialize();
+            InitializeScreenBounds();
 
             mainGameController = new MainGame(this);
             mainGameController.Initialize();
@@ -38,6 +41,11 @@ namespace Arkanoid {
             mainMenuController.Initialize();
         }
 
+        private void InitializeScreenBounds()
+        {
+            ScreenBounds = GraphicsDevice.PresentationParameters.Bounds;
+            ScreenCenter = new Vector2(ScreenBounds.Width / 2, ScreenBounds.Height / 2);
+        }
 
         protected override void LoadContent()
         {
@@ -71,9 +79,26 @@ namespace Arkanoid {
         {
             GraphicsDevice.Clear(Color.Black);
 
-            mainGameController.Draw(gameTime);
-
+            switch (gameState)
+            {
+                case GameState.Game:
+                    mainGameController.Draw(gameTime);
+                    break;
+                case GameState.Menu:
+                    mainMenuController.Draw(gameTime);
+                    break;
+            }
             base.Draw(gameTime);
+        }
+
+        public void SetState(GameState state)
+        {
+            gameState = state;
+        }
+
+        public GameState GetCurrentState()
+        {
+            return gameState;
         }
 
     }

@@ -3,23 +3,23 @@ using System.Collections.Generic;
 
 namespace Arkanoid
 {
-    public class EntitiesManager : IUpdateable
+    public class EntitiesManager : IDrawable, IUpdateable
     {
         private List<Entity> entities;
-        private List<DrawableEntity> drawableEntities;
+        private List<IDrawable> drawableEntities;
 
         public EntitiesManager()
         {
             entities = new List<Entity>();
-            drawableEntities = new List<DrawableEntity>();
+            drawableEntities = new List<IDrawable>();
         }
 
         public void AddEntity(Entity entity)
         {
             entities.Add(entity);
 
-            if (entity is DrawableEntity)
-                drawableEntities.Add((DrawableEntity)entity);
+            if (entity is IDrawable)
+                drawableEntities.Add((IDrawable)entity);
         }
 
         public void AddEntity<T>(List<T> entitiesList) where T : Entity
@@ -32,8 +32,8 @@ namespace Arkanoid
         {
             entities.Remove(entity);
 
-            if (entity is DrawableEntity)
-                drawableEntities.Remove((DrawableEntity)entity);
+            if (entity is IDrawable)
+                drawableEntities.Remove((IDrawable)entity);
         }
 
         public List<Entity> GetEntities()

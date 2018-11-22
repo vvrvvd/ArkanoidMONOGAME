@@ -4,21 +4,27 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/background.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/ballGrey.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_blue_rectangle.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_green_rectangle.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_grey_rectangle.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_purple_rectangle.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_red_rectangle.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/element_yellow_rectangle.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/gameOverFont.spritefont</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/heart.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/paddleBlu.png</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/restartFont.spritefont</File>
-    <File>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/transparentForeground.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/background.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/ballGrey.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/element_blue_rectangle.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/element_green_rectangle.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/element_grey_rectangle.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/element_purple_rectangle.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/element_red_rectangle.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/element_yellow_rectangle.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/gameOverFont.spritefont</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/heart.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/menuBackground.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/menuPressKeyFont.spritefont</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/menuTitleFont.spritefont</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/paddleBlu.png</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/restartFont.spritefont</File>
+    <File>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/transparentForeground.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -7,7 +7,7 @@ namespace Arkanoid
 {
     public class MainGame : Scene
     {
-        private static Vector2 TEXT_SPACE = new Vector2(0, 5);
+        private Vector2 textSpace = new Vector2(0, 5);
 
         private const string GAME_OVER_TEXT = "Game Over";
         private const string RESTART_TEXT = "Press ENTER to restart";
@@ -15,24 +15,18 @@ namespace Arkanoid
 
         MapGenerator mapGenerator;
 
-        private Rectangle screenBounds;
-
+        private DrawableEntity background;
         private Ball ball;
         private Paddle paddle;
+
         private HeartHP hp;
-        private Texture2D background;
-
-        private SpriteFont gameOverFont;
-        private SpriteFont restartFont;
-        private Vector2 screenCenter;
-
         private DrawableEntity gameOverForeground;
         private TextLabel gameOverText;
         private TextLabel restartText;
 
         private bool gameOver;
 
-        public MainGame(Game game) : base(game)
+        public MainGame(GameController game) : base(game)
         {
             //DUMMY
         }
@@ -52,7 +46,7 @@ namespace Arkanoid
 
         private void CheckBallLoss()
         {
-            if (hp.GetLifeCount() > 0 && ball.Transform.Position.Y == screenBounds.Bottom - ball.SpriteRenderer.GetHeight() / 2)
+            if (hp.GetLifeCount() > 0 && ball.Transform.Position.Y == game.ScreenBounds.Bottom - ball.SpriteRenderer.GetHeight() / 2)
             {
                 hp.RemoveHeart();
                 ball.SetOnPaddle(true);
@@ -87,15 +81,7 @@ namespace Arkanoid
 
         public override void Draw(GameTime gameTime)
         {
-            DrawBackground();
             base.Draw(gameTime);
-        }
-
-        private void DrawBackground()
-        {
-            spriteBatch.Begin();
-            spriteBatch.Draw(background, Vector2.Zero, Color.White);
-            spriteBatch.End();
         }
 
         #endregion
@@ -106,8 +92,8 @@ namespace Arkanoid
         {
             LoadTextures();
             LoadFonts();
-            InitializeScreenBounds();
 
+            InitializeBackground();
             InitializePaddle();
             InitializeBall();
             InitializeMapGenerator();
@@ -121,7 +107,7 @@ namespace Arkanoid
 
         private void LoadTextures()
         {
-            background = game.Content.Load<Texture2D>("background");
+            game.Content.Load<Texture2D>("background");
             game.Content.Load<Texture2D>("transparentForeground");
             game.Content.Load<Texture2D>("heart");
             game.Content.Load<Texture2D>("ballGrey");
@@ -134,27 +120,26 @@ namespace Arkanoid
             game.Content.Load<Texture2D>("element_grey_rectangle");
         }
 
-        private void InitializeScreenBounds()
-        {
-            screenBounds = game.GraphicsDevice.PresentationParameters.Bounds;
-            screenCenter = new Vector2(screenBounds.Width / 2, screenBounds.Height / 2);
-        }
-
         private void LoadFonts()
         {
-            gameOverFont = game.Content.Load<SpriteFont>("gameOverFont");
-            restartFont = game.Content.Load<SpriteFont>("restartFont");
+            game.Content.Load<SpriteFont>("gameOverFont");
+            game.Content.Load<SpriteFont>("restartFont");
+        }
+
+        private void InitializeBackground()
+        {
+            Texture2D backgroundTexture = game.Content.Load<Texture2D>("background");
+            background = new DrawableEntity(backgroundTexture, spriteBatch, game.ScreenCenter);
         }
 
         private void InitializeBall()
         {
             Texture2D ballTexture = game.Content.Load<Texture2D>("ballGrey");
-            Vector2 position = new Vector2(screenBounds.Right / 2f, screenBounds.Bottom/2f);
+            Vector2 position = game.ScreenCenter;
             ball = new Ball(spriteBatch, position, ballTexture, paddle);
             ball.Transform.Scale.X = 1f;
             ball.Transform.Scale.Y = 1f;
-            ball.SetBounds(screenBounds);
-            ball.SetOnPaddle(true);
+            ball.SetBounds(game.ScreenBounds);
         }
 
         private void InitializePaddle()
@@ -162,11 +147,11 @@ namespace Arkanoid
             float scaleX = 1f;
             float scaleY = 1f;
             Texture2D paddleTexture = game.Content.Load<Texture2D>("paddleBlu");
-            Vector2 position = new Vector2(screenBounds.Right / 2f, screenBounds.Bottom-paddleTexture.Height/2 * scaleY);
+            Vector2 position = new Vector2(game.ScreenBounds.Right / 2f, game.ScreenBounds.Bottom-paddleTexture.Height/2 * scaleY);
             paddle = new Paddle(spriteBatch, position, paddleTexture);
             paddle.Transform.Scale.X = scaleX;
             paddle.Transform.Scale.Y = scaleY;
-            paddle.SetBounds(screenBounds);
+            paddle.SetBounds(game.ScreenBounds);
         }
 
         private void InitializeUI()
@@ -184,7 +169,7 @@ namespace Arkanoid
             float offsetY = 10f;
 
             Texture2D heartTexture = game.Content.Load<Texture2D>("heart");
-            Vector2 position = new Vector2(screenBounds.Left + heartTexture.Width/2f*scaleX + offsetX, screenBounds.Top + heartTexture.Height/2f * scaleY + offsetY);
+            Vector2 position = new Vector2(game.ScreenBounds.Left + heartTexture.Width/2f*scaleX + offsetX, game.ScreenBounds.Top + heartTexture.Height/2f * scaleY + offsetY);
             hp = new HeartHP(heartTexture, spriteBatch, 0, position);
             hp.Transform.Scale.X = scaleX;
             hp.Transform.Scale.Y = scaleY;
@@ -193,21 +178,24 @@ namespace Arkanoid
 
         private void InitializeTexts()
         {
-            gameOverText = new TextLabel(GAME_OVER_TEXT, gameOverFont, spriteBatch, screenCenter);
+            SpriteFont gameOverFont = game.Content.Load<SpriteFont>("gameOverFont");
+            SpriteFont restartFont = game.Content.Load<SpriteFont>("restartFont");
 
-            Vector2 restartTextPosition = screenCenter + new Vector2(0, gameOverText.GetTextSize().Y) + TEXT_SPACE;
+            gameOverText = new TextLabel(GAME_OVER_TEXT, gameOverFont, spriteBatch, game.ScreenCenter - textSpace/2);
+
+            Vector2 restartTextPosition = game.ScreenCenter + new Vector2(0, gameOverText.GetTextSize().Y) + textSpace/2;
             restartText = new TextLabel(RESTART_TEXT, restartFont, spriteBatch, restartTextPosition);
         }
 
         private void InitializeGameOverForeground()
         {
             Texture2D foregroundTexture = game.Content.Load<Texture2D>("transparentForeground");
-            gameOverForeground = new DrawableEntity(foregroundTexture, spriteBatch, screenCenter);
+            gameOverForeground = new DrawableEntity(foregroundTexture, spriteBatch, game.ScreenCenter);
         }
 
         private void InitializeMapGenerator()
         {
-            mapGenerator = new MapGenerator(game, spriteBatch, screenBounds);
+            mapGenerator = new MapGenerator(game, spriteBatch, game.ScreenBounds);
         }
 
         private void PrepareNewGame()
@@ -216,17 +204,18 @@ namespace Arkanoid
             physicsManager.Clear();
             managerUI.Clear();
 
-            entitiesManager.AddEntity(ball);
+            entitiesManager.AddEntity(background);
             entitiesManager.AddEntity(paddle);
+            entitiesManager.AddEntity(ball);
 
-            physicsManager.AddPhysicsEntity(ball);
             physicsManager.AddPhysicsEntity(paddle);
+            physicsManager.AddPhysicsEntity(ball);
 
             managerUI.AddEntity(hp);
 
-            paddle.Transform.Position.X = screenCenter.X;
-            ball.SetOnPaddle(true);
+            paddle.Transform.Position.X = game.ScreenCenter.X;
             paddle.SetBall(ball);
+            ball.SetOnPaddle(true);
 
             hp.SetHeart(INIT_LIFE_COUNT);
 
@@ -237,7 +226,7 @@ namespace Arkanoid
 
         private void GenerateMap()
         {
-            List<Brick> map = mapGenerator.GenerateSimpleMap(5, 4, 5f, 5f);
+            List<Brick> map = mapGenerator.GenerateSimpleMap(6, 5, 5f, 5f);
 
             entitiesManager.AddEntity(map);
             physicsManager.AddPhysicsEntity(map);

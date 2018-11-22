@@ -1,23 +1,24 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 
 namespace Arkanoid
 {
     public abstract class Scene : IUpdateable, IDrawable
     {
-        protected Game game;
+        protected GameController game;
         protected SpriteBatch spriteBatch;
-        protected ManagerUI managerUI;
+        protected EntitiesManager managerUI;
         protected EntitiesManager entitiesManager;
         protected PhysicsManager physicsManager;
         protected List<Entity> entities;
 
-        public Scene(Game game)
+        public Scene(GameController game)
         {
             this.game = game;
             this.spriteBatch = new SpriteBatch(game.GraphicsDevice);
-            managerUI = new ManagerUI();
+            managerUI = new EntitiesManager();
             entitiesManager = new EntitiesManager();
             physicsManager = new PhysicsManager();
         }
@@ -37,6 +38,7 @@ namespace Arkanoid
 
             entitiesManager.Update(gameTime);
             physicsManager.Update(gameTime);
+            managerUI.Update(gameTime);
         }
 
         public void DestroyEntity(Entity entity)
@@ -53,11 +55,11 @@ namespace Arkanoid
 
         public virtual void Draw(GameTime gameTime)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied);
             entitiesManager.Draw(gameTime);
             spriteBatch.End();
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Immediate, BlendState.NonPremultiplied);
             managerUI.Draw(gameTime);
             spriteBatch.End();
         }

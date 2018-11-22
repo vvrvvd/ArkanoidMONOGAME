@@ -98,3 +98,6 @@ C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\C
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\gameOverFont.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\restartFont.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\transparentForeground.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\menuBackground.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\menuTitleFont.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\menuPressKeyFont.xnb

@@ -45,24 +45,24 @@
     <Compile Include="GameController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scripts\Abstracts\Misc\Scene.cs" />
-    <Compile Include="Scripts\Abstracts\Entities\DrawableEntity.cs" />
+    <Compile Include="Scripts\Abstracts\Scene.cs" />
+    <Compile Include="Scripts\Abstracts\DrawableEntity.cs" />
     <Compile Include="Scripts\Abstracts\Interfaces\IDrawable.cs" />
     <Compile Include="Scripts\Abstracts\Interfaces\IUpdateable.cs" />
     <Compile Include="Scripts\Abstracts\Interfaces\IPhysicsBody.cs" />
-    <Compile Include="Scripts\Components\SpriteRenderer.cs" />
-    <Compile Include="Scripts\Objects\UI\HeartHP.cs" />
-    <Compile Include="Scripts\Objects\UI\TextLabel.cs" />
-    <Compile Include="Scripts\Utils\EntitiesManager.cs" />
-    <Compile Include="Scripts\Objects\Managers\MainGame\MainGame.cs" />
-    <Compile Include="Scripts\Utils\ManagerUI.cs" />
-    <Compile Include="Scripts\Utils\PhysicsManager.cs" />
+    <Compile Include="Scripts\Objects\Components\SpriteRenderer.cs" />
+    <Compile Include="Scripts\Objects\GameObjects\UI\HeartHP.cs" />
+    <Compile Include="Scripts\Objects\GameObjects\UI\FadingInOutTextLabel.cs" />
+    <Compile Include="Scripts\Objects\GameObjects\UI\TextLabel.cs" />
+    <Compile Include="Scripts\Objects\Managers\EntitiesManager.cs" />
+    <Compile Include="Scripts\Scenes\MainGame.cs" />
+    <Compile Include="Scripts\Objects\Managers\PhysicsManager.cs" />
     <Compile Include="Scripts\Objects\GameObjects\Brick.cs" />
     <Compile Include="Scripts\Objects\GameObjects\Paddle.cs" />
     <Compile Include="Scripts\Objects\GameObjects\Ball.cs" />
-    <Compile Include="Scripts\Components\Transform.cs" />
-    <Compile Include="Scripts\Abstracts\Entities\Entity.cs" />
-    <Compile Include="Scripts\Objects\Managers\MainMenu\MainMenu.cs" />
+    <Compile Include="Scripts\Objects\Components\Transform.cs" />
+    <Compile Include="Scripts\Abstracts\Entity.cs" />
+    <Compile Include="Scripts\Scenes\MainMenu.cs" />
     <Compile Include="Scripts\Utils\MapGenerator.cs" />
   </ItemGroup>
   <ItemGroup>

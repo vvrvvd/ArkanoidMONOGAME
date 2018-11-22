@@ -5,26 +5,32 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Arkanoid
 {
-    class TextLabel : IDrawable
+    class TextLabel : Entity, IDrawable
     {
-        public Transform Transform;
-
         private SpriteFont font;
         private string text;
         private Color color;
         private SpriteBatch spriteBatch;
         private Vector2 textSize;
 
-        public TextLabel(string text, SpriteFont font, SpriteBatch spriteBatch, Vector2 position)
+        public TextLabel(string text, SpriteFont font, SpriteBatch spriteBatch, Vector2 position) : base(position)
         {
             this.font = font;
             this.spriteBatch = spriteBatch;
-            Transform = new Transform(position);
             color = Color.White;
             SetText(text);
         }
 
-        public void Draw(GameTime gameTime)
+        public TextLabel(string text, SpriteFont font, SpriteBatch spriteBatch, Transform transform)
+        {
+            this.font = font;
+            this.spriteBatch = spriteBatch;
+            this.Transform = transform;
+            color = Color.White;
+            SetText(text);
+        }
+
+        public virtual void Draw(GameTime gameTime)
         {
             spriteBatch.DrawString(font, text, Transform.Position-textSize/2, color);
         }
