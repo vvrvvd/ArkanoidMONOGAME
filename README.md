@@ -1,3 +1,3 @@
 # DotNetProject
- ![Demo CountPages alpha](https://github.com/vvrvvd/Arkanoid-MONOGAME/blob/master/Gifs/ArkanoidMenu.gif) 
- ![Demo CountPages alpha](https://github.com/vvrvvd/Arkanoid-MONOGAME/blob/master/Gifs/ArkanoidGam.gif)
+ ![Demo CountPages alpha](https://github.com/vvrvvd/Arkanoid-MONOGAME/blob/master/Gifs/menu.gif) 
+ ![Demo CountPages alpha](https://github.com/vvrvvd/Arkanoid-MONOGAME/blob/master/Gifs/game.gif)
