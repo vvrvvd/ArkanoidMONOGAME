@@ -1,3 +1,0 @@
--dziedziczenie
--Pattern matching
--Lambda
