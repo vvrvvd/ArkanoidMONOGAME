@@ -101,3 +101,6 @@ E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\transparentForegr
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\menuBackground.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\menuTitleFont.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\menuPressKeyFont.xnb
+C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\menuBackground.xnb
+C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\menuPressKeyFont.xnb
+C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\menuTitleFont.xnb

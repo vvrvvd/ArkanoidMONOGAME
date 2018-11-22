@@ -6,7 +6,7 @@ namespace Arkanoid {
 
     public class Ball : DrawableEntity, IPhysicsBody {
 
-        private readonly float speed = 350f;
+        private const float BALL_SPEED = 350f;
 
         private Rectangle screenBounds;
         private Vector2 direction;
@@ -70,7 +70,7 @@ namespace Arkanoid {
 
         private void Move()
         {
-            Transform.Position += direction * speed * deltaTime;
+            Transform.Position += direction * BALL_SPEED * deltaTime;
         }
 
         private void CheckBounds()
@@ -117,17 +117,17 @@ namespace Arkanoid {
                 Vector2 paddleDirection = paddle.GetDirection();
                 Rectangle ballBody = GetBody();
 
-                int distY = (int)Math.Ceiling(Math.Abs((ballBody.Center.Y - speed * direction.Y * deltaTime) - paddleBody.Center.Y));
+                int distY = (int)Math.Ceiling(Math.Abs((ballBody.Center.Y - BALL_SPEED * direction.Y * deltaTime) - paddleBody.Center.Y));
                 int minDistY = ballBody.Height / 2 + paddleBody.Height / 2;
 
                 if (distY >= minDistY) //Not ball loose so we can bounce from paddle
                 {
-                    Transform.Position -= speed * direction * deltaTime;
+                    Transform.Position -= BALL_SPEED * direction * deltaTime;
                     BounceFromMovingVertCollider(collider, paddleDirection.X);
                 }
             } else if (collider is Brick)
             {
-                Transform.Position -= speed * direction * deltaTime;
+                Transform.Position -= BALL_SPEED * direction * deltaTime;
                 BounceFromCollider(collider);
             }
         }

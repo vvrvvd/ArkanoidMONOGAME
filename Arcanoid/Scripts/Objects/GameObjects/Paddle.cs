@@ -1,12 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace Arkanoid {
 
     public class Paddle : DrawableEntity, IPhysicsBody {
 
-        private readonly float speed = 400f;
+        private const float BALL_THROW_X_NOISE = 0.25f;
+        private const float PADDLE_SPEED = 400f;
 
         private Rectangle screenBounds;
         private Vector2 direction = Vector2.Zero;
@@ -51,28 +53,36 @@ namespace Arkanoid {
         private void CheckInput()
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Left))
-            {
                 direction = -Vector2.UnitX;
-            }
             else if (Keyboard.GetState().IsKeyDown(Keys.Right))
-            {
                 direction = Vector2.UnitX;
-            }
             else
-            {
                 direction = Vector2.Zero;
-            }
 
             if(ball!=null && ball.IsOnPaddle() && Keyboard.GetState().IsKeyDown(Keys.Space))
-            {
-                ball.SetDirection(Vector2.UnitY);
-                ball.SetOnPaddle(false);
-            }
+                ThrowBall();
+        }
+
+        private void ThrowBall()
+        {
+            Vector2 dir = GetRandomBallDirection();
+            ball.SetDirection(dir);
+            ball.SetOnPaddle(false);
+        }
+
+        private Vector2 GetRandomBallDirection()
+        {
+            float range = BALL_THROW_X_NOISE;
+            Random random = new Random();
+
+            float noiseX = (float)random.NextDouble() * (2 * range) - range;
+            Vector2 dir = new Vector2(noiseX, (float)Math.Sqrt(1 - noiseX * noiseX));
+            return dir;
         }
 
         private void Move()
         {
-            Transform.Position += direction * speed * deltaTime;
+            Transform.Position += direction * PADDLE_SPEED * deltaTime;
         }
 
         private void CheckBounds()
