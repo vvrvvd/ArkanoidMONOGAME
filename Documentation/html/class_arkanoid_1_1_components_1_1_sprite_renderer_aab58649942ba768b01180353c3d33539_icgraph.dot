@@ -1,0 +1,16 @@
+digraph "Arkanoid.Components.SpriteRenderer.GetWidth"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node15 [label="Arkanoid.Components.Sprite\lRenderer.GetWidth",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="Arkanoid.GameObjects.Ball.\lBounceFromCollider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_game_objects_1_1_ball.html#a20fd35798f60f9ffb33b210b797a4361"];
+  Node15 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="Arkanoid.GameObjects.Ball.\lCheckBounds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_game_objects_1_1_ball.html#a40de8aa8ba4c25b99036aeb12f3f272c"];
+  Node15 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="Arkanoid.GameObjects.Paddle.\lCheckBounds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_game_objects_1_1_paddle.html#ae1e2d281c445bb8b65332f0d9f3f9795"];
+  Node15 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="Arkanoid.GameObjects.Heart\lHP.Draw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_game_objects_1_1_heart_h_p.html#a7438e46d584a91fc466c47b63b29024e",tooltip="Draws number of hearts equal to life count "];
+}

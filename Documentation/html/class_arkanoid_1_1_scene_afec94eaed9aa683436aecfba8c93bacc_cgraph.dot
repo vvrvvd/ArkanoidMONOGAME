@@ -1,0 +1,18 @@
+digraph "Arkanoid.Scene.Update"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node12 [label="Arkanoid.Scene.Update",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Arkanoid.Scene.DestroyEntity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_scene.html#adc36a82722b934865adb00fcc6c2aa5b",tooltip="Removes entity from every possible manager "];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Arkanoid.Managers.Entities\lManager.RemoveEntity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_managers_1_1_entities_manager.html#a5b03b5b6c2b0422b613199b8599923d3",tooltip="Removes entity from manager "];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Arkanoid.Managers.Physics\lManager.RemovePhysicsEntity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_managers_1_1_physics_manager.html#abd1d83f3d5fee5570a7502675ca8654c",tooltip="Removes body from physics manager "];
+  Node12 -> Node16 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="Arkanoid.Managers.Physics\lManager.Update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_managers_1_1_physics_manager.html#a4e7237c97c40546aedee5ad5800e4db9",tooltip="Update checking collisions of bodies in the manager "];
+  Node12 -> Node17 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="Arkanoid.Managers.Entities\lManager.Update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_managers_1_1_entities_manager.html#a0fd4ebfc808c0e35c4a8f921bd60b88c",tooltip="Invokes update method in every entity in the manager "];
+}

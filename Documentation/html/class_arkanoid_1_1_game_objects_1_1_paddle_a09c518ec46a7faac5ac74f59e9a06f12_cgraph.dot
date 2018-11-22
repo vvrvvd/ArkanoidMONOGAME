@@ -1,0 +1,12 @@
+digraph "Arkanoid.GameObjects.Paddle.ThrowBall"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node37 [label="Arkanoid.GameObjects.Paddle.\lThrowBall",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node37 -> Node38 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node38 [label="Arkanoid.GameObjects.Ball.\lSetDirection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_game_objects_1_1_ball.html#a3be69e5ce927b2522b8eb914858e40fd",tooltip="Set ball moving direction "];
+  Node37 -> Node39 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node39 [label="Arkanoid.GameObjects.Ball.\lSetOnPaddle",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_game_objects_1_1_ball.html#a949534625c88f516519542dbbed46e04",tooltip="Sets paddle on which the ball stays after life loss "];
+}

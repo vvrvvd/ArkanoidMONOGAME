@@ -85,7 +85,6 @@ E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\element_purple_re
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\element_red_rectangle.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\element_yellow_rectangle.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\paddleBlu.xnb
-E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\MonoGame.UI.Forms.dll
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Arcanoid.exe.config
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\heart.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\background.xnb
@@ -104,3 +103,4 @@ E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Content\menuPressKeyFont.
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\menuBackground.xnb
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\menuPressKeyFont.xnb
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\menuTitleFont.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Graphviz.dll

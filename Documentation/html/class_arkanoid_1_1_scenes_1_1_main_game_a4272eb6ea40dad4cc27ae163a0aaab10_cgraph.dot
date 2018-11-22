@@ -1,0 +1,10 @@
+digraph "Arkanoid.Scenes.MainGame.GenerateMap"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node14 [label="Arkanoid.Scenes.MainGame.\lGenerateMap",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node14 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Arkanoid.GameObjects.Map\lGenerator.GenerateMapWithBlocks",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_game_objects_1_1_map_generator.html#a6b51c862ebc045508c93d2e4f1f61228",tooltip="Generates map of random bricks with checkerboard pattern of immortal bricks in the first and the last..."];
+}

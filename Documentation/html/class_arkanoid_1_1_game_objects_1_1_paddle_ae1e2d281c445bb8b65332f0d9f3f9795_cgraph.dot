@@ -1,0 +1,10 @@
+digraph "Arkanoid.GameObjects.Paddle.CheckBounds"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node10 [label="Arkanoid.GameObjects.Paddle.\lCheckBounds",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Arkanoid.Components.Sprite\lRenderer.GetWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_components_1_1_sprite_renderer.html#aab58649942ba768b01180353c3d33539",tooltip="Calculate scene width of the texture "];
+}

@@ -1,4 +1,3 @@
 -dziedziczenie
 -Pattern matching
 -Lambda
--MonoGame.UI.Forms

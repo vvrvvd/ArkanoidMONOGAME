@@ -1,10 +1,15 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Arkanoid.GameObjects;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 
-namespace Arkanoid
+namespace Arkanoid.Scenes
 {
+
+    /// <summary>
+    /// Main game scene
+    /// </summary>
     public class MainGame : Scene
     {
         private Vector2 textSpace = new Vector2(0, 5);
@@ -226,7 +231,7 @@ namespace Arkanoid
 
         private void GenerateMap()
         {
-            List<Brick> map = mapGenerator.GenerateSimpleMap(6, 5, 5f, 5f);
+            List<Brick> map = mapGenerator.GenerateMapWithBlocks(7, 5, 5f, 5f);
 
             entitiesManager.AddEntity(map);
             physicsManager.AddPhysicsEntity(map);

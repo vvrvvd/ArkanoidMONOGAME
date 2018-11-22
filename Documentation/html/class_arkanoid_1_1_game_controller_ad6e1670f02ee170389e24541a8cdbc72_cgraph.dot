@@ -1,0 +1,14 @@
+digraph "Arkanoid.GameController.Initialize"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node8 [label="Arkanoid.GameController.\lInitialize",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Arkanoid.Scenes.MainMenu.\lInitialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_scenes_1_1_main_menu.html#a1beab9ae8ef22cae9cc338b077f4bf68",tooltip="Initialize function. Invoked on start of the game "];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Arkanoid.Scenes.MainGame.\lInitialize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_scenes_1_1_main_game.html#a8a9a3754d8bd7716b708765de9d3ab1a",tooltip="Initialize function. Invoked on start of the game "];
+  Node8 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Arkanoid.GameController.\lInitializeScreenBounds",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_game_controller.html#ade5bf1bc88fa5994e13a5d7f239d9fac"];
+}

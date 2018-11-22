@@ -2,8 +2,12 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Arkanoid
+namespace Arkanoid.Scenes
 {
+
+    /// <summary>
+    /// Main menu scene
+    /// </summary>
     class MainMenu : Scene
     {
         private const string TITLE_TEXT = "Arkanoid";

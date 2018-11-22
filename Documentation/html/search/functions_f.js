@@ -1,0 +1,7 @@
+var searchData=
+[
+  ['takelifecount',['TakeLifeCount',['../class_arkanoid_1_1_game_objects_1_1_brick.html#a70c5ea13727db75d607e5d68cb615dea',1,'Arkanoid::GameObjects::Brick']]],
+  ['textlabel',['TextLabel',['../class_arkanoid_1_1_text_label.html#a225df5f634e70dff8b9d02f64e8ac476',1,'Arkanoid.TextLabel.TextLabel(string text, SpriteFont font, SpriteBatch spriteBatch, Vector2 position)'],['../class_arkanoid_1_1_text_label.html#a3b78f46f245557f1fdb60722db6d0f2c',1,'Arkanoid.TextLabel.TextLabel(string text, SpriteFont font, SpriteBatch spriteBatch, Transform transform)']]],
+  ['throwball',['ThrowBall',['../class_arkanoid_1_1_game_objects_1_1_paddle.html#a09c518ec46a7faac5ac74f59e9a06f12',1,'Arkanoid::GameObjects::Paddle']]],
+  ['transform',['Transform',['../class_arkanoid_1_1_components_1_1_transform.html#a412936c107412e6fa2229cb45d8d9ee1',1,'Arkanoid.Components.Transform.Transform()'],['../class_arkanoid_1_1_components_1_1_transform.html#abb7d69a41d010deec47480a4b706795a',1,'Arkanoid.Components.Transform.Transform(Vector2 position)'],['../class_arkanoid_1_1_components_1_1_transform.html#abd005c11bcfa6a1c29f20ccfd5b43028',1,'Arkanoid.Components.Transform.Transform(Vector2 position, Vector2 rotation)'],['../class_arkanoid_1_1_components_1_1_transform.html#ab380feb7c6a2789b73c9c09746ed2bbb',1,'Arkanoid.Components.Transform.Transform(Vector2 position, Vector2 rotation, Vector2 scale)']]]
+];

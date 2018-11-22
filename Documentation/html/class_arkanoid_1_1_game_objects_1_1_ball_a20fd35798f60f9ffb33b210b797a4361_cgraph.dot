@@ -1,0 +1,12 @@
+digraph "Arkanoid.GameObjects.Ball.BounceFromCollider"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node2 [label="Arkanoid.GameObjects.Ball.\lBounceFromCollider",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Arkanoid.IPhysicsBody.Get\lCollider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_arkanoid_1_1_i_physics_body.html#a752d8b0e1fcbb6ae07871e8bcc5b8827",tooltip="Method returning collider "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Arkanoid.Components.Sprite\lRenderer.GetWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_components_1_1_sprite_renderer.html#aab58649942ba768b01180353c3d33539",tooltip="Calculate scene width of the texture "];
+}

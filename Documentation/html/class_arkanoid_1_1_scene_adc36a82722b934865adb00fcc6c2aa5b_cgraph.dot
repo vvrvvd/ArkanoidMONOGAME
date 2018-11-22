@@ -1,0 +1,12 @@
+digraph "Arkanoid.Scene.DestroyEntity"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node2 [label="Arkanoid.Scene.DestroyEntity",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Arkanoid.Managers.Entities\lManager.RemoveEntity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_managers_1_1_entities_manager.html#a5b03b5b6c2b0422b613199b8599923d3",tooltip="Removes entity from manager "];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Arkanoid.Managers.Physics\lManager.RemovePhysicsEntity",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_managers_1_1_physics_manager.html#abd1d83f3d5fee5570a7502675ca8654c",tooltip="Removes body from physics manager "];
+}

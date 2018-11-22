@@ -1,0 +1,12 @@
+digraph "Arkanoid.IPhysicsBody.GetCollider"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Arkanoid.IPhysicsBody.Get\lCollider",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Arkanoid.GameObjects.Ball.\lBounceFromCollider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_game_objects_1_1_ball.html#a20fd35798f60f9ffb33b210b797a4361"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Arkanoid.GameObjects.Ball.\lBounceFromMovingVertCollider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_game_objects_1_1_ball.html#aa0285a97f11716188fc114481ead6636"];
+}

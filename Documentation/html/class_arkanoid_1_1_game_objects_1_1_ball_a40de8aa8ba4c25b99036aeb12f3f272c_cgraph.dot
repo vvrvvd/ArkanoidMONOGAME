@@ -1,0 +1,12 @@
+digraph "Arkanoid.GameObjects.Ball.CheckBounds"
+{
+ // INTERACTIVE_SVG=YES
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node13 [label="Arkanoid.GameObjects.Ball.\lCheckBounds",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node13 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Arkanoid.Components.Sprite\lRenderer.GetHeight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_components_1_1_sprite_renderer.html#a939bda2feb4e0f81188252d68f62d7e1",tooltip="Calculate scene height of the texture "];
+  Node13 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="Arkanoid.Components.Sprite\lRenderer.GetWidth",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_components_1_1_sprite_renderer.html#aab58649942ba768b01180353c3d33539",tooltip="Calculate scene width of the texture "];
+}
