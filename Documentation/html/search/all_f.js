@@ -8,6 +8,7 @@ var searchData=
   ['removeentity',['RemoveEntity',['../class_arkanoid_1_1_managers_1_1_entities_manager.html#a5b03b5b6c2b0422b613199b8599923d3',1,'Arkanoid::Managers::EntitiesManager']]],
   ['removeheart',['RemoveHeart',['../class_arkanoid_1_1_game_objects_1_1_heart_h_p.html#a6356a4ab4f4531562ce4f6f43ed5cedc',1,'Arkanoid::GameObjects::HeartHP']]],
   ['removephysicsentity',['RemovePhysicsEntity',['../class_arkanoid_1_1_managers_1_1_physics_manager.html#abd1d83f3d5fee5570a7502675ca8654c',1,'Arkanoid::Managers::PhysicsManager']]],
+  ['restart_5ffont',['RESTART_FONT',['../class_arkanoid_1_1_resources_1_1_game_resources.html#aa4ca9cd3181a55b0ad62dde712eae708',1,'Arkanoid::Resources::GameResources']]],
   ['restart_5ftext',['RESTART_TEXT',['../class_arkanoid_1_1_scenes_1_1_main_game.html#af0caa094f29c30db0fb9e7be34747c7d',1,'Arkanoid::Scenes::MainGame']]],
   ['restarttext',['restartText',['../class_arkanoid_1_1_scenes_1_1_main_game.html#a03ab0f14a44cfc8f76dcbf45ba54dc69',1,'Arkanoid::Scenes::MainGame']]],
   ['return',['RETURN',['../exparse_8h.html#a6a0e6b80dd3d5ca395cf58151749f5e2',1,'RETURN():&#160;exparse.h'],['../exparse_8h.html#a35bc54b32fad7719a611b0d09871c545a520e09ffec033636dba711f3441cc600',1,'RETURN():&#160;exparse.h']]],

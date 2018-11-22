@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
 using System;
-using Arkanoid.Components;
+using Arkanoid.Resources;
 
 namespace Arkanoid.GameObjects
 {
@@ -35,10 +35,10 @@ namespace Arkanoid.GameObjects
 
         private void InitializeBrickTextures()
         {
-            purpleTexture = game.Content.Load<Texture2D>("element_purple_rectangle");
-            redTexture = game.Content.Load<Texture2D>("element_red_rectangle");
-            yellowTexture = game.Content.Load<Texture2D>("element_yellow_rectangle");
-            greyTexture = game.Content.Load<Texture2D>("element_grey_rectangle");
+            purpleTexture = game.Content.Load<Texture2D>(GameResources.BRICK_PURPLE_TEXTURE);
+            redTexture = game.Content.Load<Texture2D>(GameResources.BRICK_RED_TEXTURE);
+            yellowTexture = game.Content.Load<Texture2D>(GameResources.BRICK_YELLOW_TEXTURE);
+            greyTexture = game.Content.Load<Texture2D>(GameResources.BRICK_GREY_TEXTURE);
 
             purpleBrickTextures = new Texture2D[] { yellowTexture, redTexture, purpleTexture };
             redBrickTextures = new Texture2D[] { yellowTexture, redTexture};
@@ -58,7 +58,7 @@ namespace Arkanoid.GameObjects
             float scaleX = 1f;
             float scaleY = 1f;
 
-            Texture2D brickTexture = game.Content.Load<Texture2D>("element_yellow_rectangle");
+            Texture2D brickTexture = yellowTexture;
 
             float width = brickTexture.Width * scaleX + distX;
             float height = brickTexture.Height * scaleY + distY;
@@ -112,8 +112,8 @@ namespace Arkanoid.GameObjects
             float scaleX = 1f;
             float scaleY = 1f;
 
-            Texture2D brickTexture = game.Content.Load<Texture2D>("element_yellow_rectangle");
-            Texture2D immortalBrickTexture = game.Content.Load<Texture2D>("element_grey_rectangle");
+            Texture2D brickTexture = yellowTexture;
+            Texture2D immortalBrickTexture = greyTexture;
 
             float width = brickTexture.Width * scaleX + distX;
             float height = brickTexture.Height * scaleY + distY;

@@ -4,5 +4,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="EXSTYPE",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$union_e_x_s_t_y_p_e.html"];
+  Node0 [label="Arkanoid.Resources.GameResources",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_arkanoid_1_1_resources_1_1_game_resources.html",tooltip="Static class containing textures and fonts names for MainGame Scene. "];
 }

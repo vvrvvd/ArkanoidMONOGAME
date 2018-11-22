@@ -26,7 +26,6 @@ C:\Users\Fryderyk\source\repos\Arcanoid\Arcanoid\bin\Windows\x86\Debug\Content\p
 C:\Users\Fryderyk\source\repos\Arcanoid\Arcanoid\bin\Windows\x86\Debug\Content\brick.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Debug\Arcanoid.exe
 E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Debug\Arcanoid.pdb
-E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Debug\Arcanoid.csprojResolveAssemblyReference.cache
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Arcanoid.exe
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Arcanoid.pdb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\MonoGame.Framework.dll
@@ -104,3 +103,6 @@ C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\C
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\menuPressKeyFont.xnb
 C:\Users\Wiktor\Desktop\Github\ArkanoidMONOGAME\Arcanoid\bin\Windows\x86\Debug\Content\menuTitleFont.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Debug\Graphviz.dll
+E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Debug\Arcanoid.csprojAssemblyReference.cache
+E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Debug\Arcanoid.csproj.CoreCompileInputs.cache
+E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Debug\Arcanoid.csproj.CopyComplete

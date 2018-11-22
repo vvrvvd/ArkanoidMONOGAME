@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Arkanoid.Resources;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -54,39 +55,39 @@ namespace Arkanoid.Scenes
 
         private void LoadTextures()
         {
-            game.Content.Load<Texture2D>("menuBackground");
+            game.Content.Load<Texture2D>(MenuResources.BACKGROUND_TEXTURE);
         }
 
         private void LoadFonts()
         {
-            game.Content.Load<SpriteFont>("menuTitleFont");
-            game.Content.Load<SpriteFont>("menuPressKeyFont");
+            game.Content.Load<SpriteFont>(MenuResources.TITLE_FONT);
+            game.Content.Load<SpriteFont>(MenuResources.PRESS_KEY_FONT);
         }
 
         private void InitializeBackground()
         {
-            Texture2D menuTexture = game.Content.Load<Texture2D>("menuBackground");
+            Texture2D menuTexture = game.Content.Load<Texture2D>(MenuResources.BACKGROUND_TEXTURE);
             DrawableEntity background = new DrawableEntity(menuTexture, spriteBatch, game.ScreenCenter);
             entitiesManager.AddEntity(background);
         }
 
         private void InitializeTitle()
         {
-            SpriteFont titleFont = game.Content.Load<SpriteFont>("menuTitleFont");
+            SpriteFont titleFont = game.Content.Load<SpriteFont>(MenuResources.TITLE_FONT);
             TextLabel title = new TextLabel(TITLE_TEXT, titleFont, spriteBatch, game.ScreenCenter + titleOffset);
             managerUI.AddEntity(title);
         }
 
         private void InitializePressKeyText()
         {
-            SpriteFont pressKeyFont = game.Content.Load<SpriteFont>("menuPressKeyFont");
+            SpriteFont pressKeyFont = game.Content.Load<SpriteFont>(MenuResources.PRESS_KEY_FONT);
             FadingInOutTextLabel pressKeyText = new FadingInOutTextLabel(PRESS_KEY_TEXT, pressKeyFont, spriteBatch, game.ScreenCenter + pressKeyOffset, 1);
             managerUI.AddEntity(pressKeyText);
         }
 
         private void InitializeAuthorText()
         {
-            SpriteFont authorFont = game.Content.Load<SpriteFont>("menuPressKeyFont");
+            SpriteFont authorFont = game.Content.Load<SpriteFont>(MenuResources.PRESS_KEY_FONT);
             Vector2 position = new Vector2(game.ScreenCenter.X, game.ScreenBounds.Bottom) + authorOffset;
             TextLabel author = new TextLabel(AUTHOR_TEXT, authorFont, spriteBatch, position);
             managerUI.AddEntity(author);

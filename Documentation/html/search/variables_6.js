@@ -3,6 +3,8 @@ var searchData=
   ['game',['game',['../class_arkanoid_1_1_game_objects_1_1_map_generator.html#a1f6fdd6539dce589f94f501d142387dd',1,'Arkanoid.GameObjects.MapGenerator.game()'],['../class_arkanoid_1_1_scene.html#ad56121b6e50ee3c32b6e13088bf48f09',1,'Arkanoid.Scene.game()']]],
   ['game_5fover_5ftext',['GAME_OVER_TEXT',['../class_arkanoid_1_1_scenes_1_1_main_game.html#a8d41eceb332c3a90102fa08d6d66373b',1,'Arkanoid::Scenes::MainGame']]],
   ['gameover',['gameOver',['../class_arkanoid_1_1_scenes_1_1_main_game.html#ac2ba05a97d78289fc66b6cebce829d53',1,'Arkanoid::Scenes::MainGame']]],
+  ['gameover_5ffont',['GAMEOVER_FONT',['../class_arkanoid_1_1_resources_1_1_game_resources.html#a5553ad10987d1749370ba783a970d445',1,'Arkanoid::Resources::GameResources']]],
+  ['gameover_5fforeground_5ftexture',['GAMEOVER_FOREGROUND_TEXTURE',['../class_arkanoid_1_1_resources_1_1_game_resources.html#ad53853726cad88abd4486359262e23c7',1,'Arkanoid::Resources::GameResources']]],
   ['gameoverforeground',['gameOverForeground',['../class_arkanoid_1_1_scenes_1_1_main_game.html#ad169939b126b405fa1118b0dc9bcf48a',1,'Arkanoid::Scenes::MainGame']]],
   ['gameovertext',['gameOverText',['../class_arkanoid_1_1_scenes_1_1_main_game.html#a4a5ca64aeb00058e10bc43b5a4438502',1,'Arkanoid::Scenes::MainGame']]],
   ['gamestate',['gameState',['../class_arkanoid_1_1_game_controller.html#a6331606fb81088f9e0d2484f56123ddb',1,'Arkanoid::GameController']]],

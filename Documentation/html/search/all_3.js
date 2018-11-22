@@ -15,6 +15,5 @@ var searchData=
   ['drawableentity',['DrawableEntity',['../class_arkanoid_1_1_drawable_entity.html',1,'Arkanoid.DrawableEntity'],['../class_arkanoid_1_1_drawable_entity.html#ab5a62370d046b82a544dd2f2f619ae81',1,'Arkanoid.DrawableEntity.DrawableEntity()']]],
   ['drawableentity_2ecs',['DrawableEntity.cs',['../_drawable_entity_8cs.html',1,'']]],
   ['drawsprite',['DrawSprite',['../class_arkanoid_1_1_components_1_1_sprite_renderer.html#af120bb242c96412e7c8c078cf1106196',1,'Arkanoid::Components::SpriteRenderer']]],
-  ['dynamic',['DYNAMIC',['../exparse_8h.html#a135001d5360c2c2472130ada2d26c65e',1,'DYNAMIC():&#160;exparse.h'],['../exparse_8h.html#a35bc54b32fad7719a611b0d09871c545aaac65e0072e6ff1f4c3209d2fdd8730a',1,'DYNAMIC():&#160;exparse.h']]],
-  ['dotnetproject',['DotNetProject',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['dynamic',['DYNAMIC',['../exparse_8h.html#a135001d5360c2c2472130ada2d26c65e',1,'DYNAMIC():&#160;exparse.h'],['../exparse_8h.html#a35bc54b32fad7719a611b0d09871c545aaac65e0072e6ff1f4c3209d2fdd8730a',1,'DYNAMIC():&#160;exparse.h']]]
 ];

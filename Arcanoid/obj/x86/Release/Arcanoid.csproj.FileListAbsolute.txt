@@ -1,4 +1,3 @@
-E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Arcanoid.exe.config
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Content\background.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Content\ballGrey.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Content\element_blue_rectangle.xnb
@@ -15,6 +14,7 @@ E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Content\menuTitleFont.x
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Content\paddleBlu.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Content\restartFont.xnb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Content\transparentForeground.xnb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Arcanoid.exe.config
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Arcanoid.exe
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Arcanoid.pdb
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Graphviz.dll
@@ -34,6 +34,8 @@ E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\SharpDX.DXGI.xml
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\SharpDX.Direct3D11.xml
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\SharpDX.Direct2D1.xml
 E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\SharpDX.XInput.xml
-E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Release\Arcanoid.csprojResolveAssemblyReference.cache
+E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Release\Arcanoid.csproj.CoreCompileInputs.cache
+E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Release\Arcanoid.csproj.CopyComplete
 E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Release\Arcanoid.exe
 E:\Wiktor\GitHub\DotNet\Arcanoid\obj\x86\Release\Arcanoid.pdb
+E:\Wiktor\GitHub\DotNet\Arcanoid\bin\Windows\x86\Release\Arkanoid.exe.config

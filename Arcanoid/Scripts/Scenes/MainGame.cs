@@ -1,4 +1,5 @@
 ﻿using Arkanoid.GameObjects;
+using Arkanoid.Resources;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -112,34 +113,34 @@ namespace Arkanoid.Scenes
 
         private void LoadTextures()
         {
-            game.Content.Load<Texture2D>("background");
-            game.Content.Load<Texture2D>("transparentForeground");
-            game.Content.Load<Texture2D>("heart");
-            game.Content.Load<Texture2D>("ballGrey");
-            game.Content.Load<Texture2D>("paddleBlu");
-            game.Content.Load<Texture2D>("element_red_rectangle");
-            game.Content.Load<Texture2D>("element_yellow_rectangle");
-            game.Content.Load<Texture2D>("element_blue_rectangle");
-            game.Content.Load<Texture2D>("element_purple_rectangle");
-            game.Content.Load<Texture2D>("element_green_rectangle");
-            game.Content.Load<Texture2D>("element_grey_rectangle");
+            game.Content.Load<Texture2D>(GameResources.BACKGROUND_TEXTURE);
+            game.Content.Load<Texture2D>(GameResources.GAMEOVER_FOREGROUND_TEXTURE);
+            game.Content.Load<Texture2D>(GameResources.HEART_TEXTURE);
+            game.Content.Load<Texture2D>(GameResources.BALL_TEXTURE);
+            game.Content.Load<Texture2D>(GameResources.PADDLE_TEXTURE);
+            game.Content.Load<Texture2D>(GameResources.BRICK_RED_TEXTURE);
+            game.Content.Load<Texture2D>(GameResources.BRICK_YELLOW_TEXTURE);
+            game.Content.Load<Texture2D>(GameResources.BRICK_PURPLE_TEXTURE);
+            game.Content.Load<Texture2D>(GameResources.BRICK_BLUE_TEXTURE);
+            game.Content.Load<Texture2D>(GameResources.BRICK_GREEN_TEXTURE);
+            game.Content.Load<Texture2D>(GameResources.BRICK_GREY_TEXTURE);
         }
 
         private void LoadFonts()
         {
-            game.Content.Load<SpriteFont>("gameOverFont");
-            game.Content.Load<SpriteFont>("restartFont");
+            game.Content.Load<SpriteFont>(GameResources.GAMEOVER_FONT);
+            game.Content.Load<SpriteFont>(GameResources.RESTART_FONT);
         }
 
         private void InitializeBackground()
         {
-            Texture2D backgroundTexture = game.Content.Load<Texture2D>("background");
+            Texture2D backgroundTexture = game.Content.Load<Texture2D>(GameResources.BACKGROUND_TEXTURE);
             background = new DrawableEntity(backgroundTexture, spriteBatch, game.ScreenCenter);
         }
 
         private void InitializeBall()
         {
-            Texture2D ballTexture = game.Content.Load<Texture2D>("ballGrey");
+            Texture2D ballTexture = game.Content.Load<Texture2D>(GameResources.BALL_TEXTURE);
             Vector2 position = game.ScreenCenter;
             ball = new Ball(spriteBatch, position, ballTexture, paddle);
             ball.Transform.Scale.X = 1f;
@@ -151,7 +152,7 @@ namespace Arkanoid.Scenes
         {
             float scaleX = 1f;
             float scaleY = 1f;
-            Texture2D paddleTexture = game.Content.Load<Texture2D>("paddleBlu");
+            Texture2D paddleTexture = game.Content.Load<Texture2D>(GameResources.PADDLE_TEXTURE);
             Vector2 position = new Vector2(game.ScreenBounds.Right / 2f, game.ScreenBounds.Bottom-paddleTexture.Height/2 * scaleY);
             paddle = new Paddle(spriteBatch, position, paddleTexture);
             paddle.Transform.Scale.X = scaleX;
@@ -173,7 +174,7 @@ namespace Arkanoid.Scenes
             float offsetX = 10f;
             float offsetY = 10f;
 
-            Texture2D heartTexture = game.Content.Load<Texture2D>("heart");
+            Texture2D heartTexture = game.Content.Load<Texture2D>(GameResources.HEART_TEXTURE);
             Vector2 position = new Vector2(game.ScreenBounds.Left + heartTexture.Width/2f*scaleX + offsetX, game.ScreenBounds.Top + heartTexture.Height/2f * scaleY + offsetY);
             hp = new HeartHP(heartTexture, spriteBatch, 0, position);
             hp.Transform.Scale.X = scaleX;
@@ -183,8 +184,8 @@ namespace Arkanoid.Scenes
 
         private void InitializeTexts()
         {
-            SpriteFont gameOverFont = game.Content.Load<SpriteFont>("gameOverFont");
-            SpriteFont restartFont = game.Content.Load<SpriteFont>("restartFont");
+            SpriteFont gameOverFont = game.Content.Load<SpriteFont>(GameResources.GAMEOVER_FONT);
+            SpriteFont restartFont = game.Content.Load<SpriteFont>(GameResources.RESTART_FONT);
 
             gameOverText = new TextLabel(GAME_OVER_TEXT, gameOverFont, spriteBatch, game.ScreenCenter - textSpace/2);
 
@@ -194,7 +195,7 @@ namespace Arkanoid.Scenes
 
         private void InitializeGameOverForeground()
         {
-            Texture2D foregroundTexture = game.Content.Load<Texture2D>("transparentForeground");
+            Texture2D foregroundTexture = game.Content.Load<Texture2D>(GameResources.GAMEOVER_FOREGROUND_TEXTURE);
             gameOverForeground = new DrawableEntity(foregroundTexture, spriteBatch, game.ScreenCenter);
         }
 

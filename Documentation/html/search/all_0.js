@@ -16,5 +16,7 @@ var searchData=
   ['components',['Components',['../namespace_arkanoid_1_1_components.html',1,'Arkanoid']]],
   ['gameobjects',['GameObjects',['../namespace_arkanoid_1_1_game_objects.html',1,'Arkanoid']]],
   ['managers',['Managers',['../namespace_arkanoid_1_1_managers.html',1,'Arkanoid']]],
+  ['arkanoid',['Arkanoid',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['resources',['Resources',['../namespace_arkanoid_1_1_resources.html',1,'Arkanoid']]],
   ['scenes',['Scenes',['../namespace_arkanoid_1_1_scenes.html',1,'Arkanoid']]]
 ];

@@ -9,8 +9,8 @@
     <ProjectGuid>{B41DF3FC-0A67-4B11-B3B9-CAAC022F678C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Arcanoid</RootNamespace>
-    <AssemblyName>Arcanoid</AssemblyName>
+    <RootNamespace>Arkanoid</RootNamespace>
+    <AssemblyName>Arkanoid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MonoGamePlatform>Windows</MonoGamePlatform>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -41,10 +41,15 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="GameController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\Scenes\Resources\MenuResources.cs" />
+    <Compile Include="Scripts\Scenes\Resources\GameResources.cs" />
     <Compile Include="Scripts\Utils\Abstract Classes\Scene.cs" />
     <Compile Include="Scripts\Utils\GameObjects\DrawableEntity.cs" />
     <Compile Include="Scripts\Utils\Interfaces\IDrawable.cs" />
