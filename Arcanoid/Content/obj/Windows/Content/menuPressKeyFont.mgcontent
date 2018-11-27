@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/menuPressKeyFont.spritefont</SourceFile>
-  <SourceTime>2018-11-22T00:14:35.6723874+01:00</SourceTime>
-  <DestFile>E:/Wiktor/GitHub/DotNet/Arcanoid/Content/bin/Windows/Content/menuPressKeyFont.xnb</DestFile>
-  <DestTime>2018-11-22T14:09:01.9287452+01:00</DestTime>
+  <SourceFile>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/menuPressKeyFont.spritefont</SourceFile>
+  <SourceTime>2018-11-22T11:20:09.1465441+01:00</SourceTime>
+  <DestFile>C:/Users/Wiktor/Desktop/Github/ArkanoidMONOGAME/Arcanoid/Content/bin/Windows/Content/menuPressKeyFont.xnb</DestFile>
+  <DestTime>2018-11-27T11:17:54.5031493+01:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2018-09-23T23:55:52+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
