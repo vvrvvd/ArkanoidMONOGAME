@@ -8,7 +8,7 @@ namespace Arkanoid.Components
     public class Transform
     {
         public Vector2 Position;
-        public Vector2 Rotation;
+        public Vector2 Rotation; //WTF
         public Vector2 Scale;
 
         public Transform()
